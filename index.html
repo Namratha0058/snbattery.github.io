@@ -288,7 +288,7 @@
                 Heavy Engine Battery
             </button>
         </div>
-
+		
         <div class="form-container" id="battery-form">
             <h3>Battery Order Form</h3>
             <form id="order-form" onsubmit="return displayBatteryInfo(event);">
@@ -357,10 +357,13 @@
             </form>
         </div>
 
-        <!-- Battery Display Section -->
-        <div id="battery-display" style="display:none; margin-top: 20px;">
-            <h3>Selected Battery Information</h3>
-            <div id="battery-info"></div>
+        <!-- Overlay for Battery Details -->
+        <div id="overlay" class="overlay">
+            <div class="overlay-content">
+                <span class="close" onclick="closeOverlay()">&times;</span>
+                <img id="battery-image" src="" alt="Battery">
+                <div id="battery-description" class="description"></div>
+            </div>
         </div>
 
         <!-- Modal for Inverter Battery -->
@@ -369,7 +372,7 @@
                 <span class="close" onclick="closeModal('inverter')">&times;</span>
                 <h3>Inverter Battery Details</h3>
                 <img src="path/to/inverter-battery-image.jpg" alt="Inverter Battery">
-                <p>Description of the inverter battery goes here. Include features, specifications, and benefits.</p>
+                <p>Description of the inverter battery goes here.</p>
             </div>
         </div>
 
@@ -379,7 +382,7 @@
                 <span class="close" onclick="closeModal('bike')">&times;</span>
                 <h3>Bike Battery Details</h3>
                 <img src="path/to/bike-battery-image.jpg" alt="Bike Battery">
-                <p>Description of the bike battery goes here. Include features, specifications, and benefits.</p>
+                <p>Description of the bike battery goes here.</p>
             </div>
         </div>
     </section>
@@ -413,7 +416,7 @@
         "Volkswagen": ["Volkswagen Beetle 2.0L petrol", "Volkswagen jetta diesel new", "Volkswagen jetta diesel old", "Volkswagen passat diesel", "Volkswagen passat petrol", "Volkswagen phaeton 3.6 v6", "Volkswagen polo 1.2 diesel", "Volkswagen polo 1.2 petrol", "Volkswagen polo 1.6 petrol", "Volkswagen vento 1.6 diesel", "Volkswagen vento 1.6 petrol", "Volkswagen vento old", "Volkswagen passat hybrid", "Volkswagen vento 1.2 diesel", "Volkswagen vento 1.2 petrol", "Volkswagen polo .5 diesel", "Volkswagen tiguan 2.0 diesel"],
         "Toyota": ["Toyota Corolla petrol", "Toyota camry petrol", "Toyota corolla altis diesel", "Toyota corolla altis petrol", "Toyota etios diesel", "Toyota etios liva petrol", "Toyota etios petrol", "Toyota fortuner D4 diesel", "Toyota innova diesel ", "Toyota innova petrol", "Toyota qualis diesel", "Toyota qualis petrol", "Toyota lexus diesel", "Toyota innova crysta diesel", "Toyota land cruiser prado 4.5 diesel", "Toyota land cruiser petrol", "Toyota new innova special edition diesel"] 
   };
-	  function showForm(category) {
+  function showForm(category) {
         document.getElementById('battery-form').style.display = 'block';
         // Populate car models based on the manufacturer selection
         const manufacturerSelect = document.getElementById('manufacturer');
@@ -484,10 +487,8 @@
         modal.style.display = 'none';
     }
 </script>
+    
 	
-	
- 
- 
  
 
 
