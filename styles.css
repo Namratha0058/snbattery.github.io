@@ -50,6 +50,27 @@ body {
   background-color: var(--bg-clr);
   transition: background-color 1000ms;
 }
+/* Container for the image row */
+.image-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    justify-content: space-between; /* Space out images */
+}
+
+/* Style for the gallery images */
+.gallery-image {
+    width: calc(50% - 10px); /* Two images per row with spacing */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space below images */
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
+    .gallery-image {
+        width: 100%; /* Full width on small screens */
+    }
+}
+
 
 ul {
   list-style: none;
