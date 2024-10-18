@@ -50,135 +50,7 @@ body {
   background-color: var(--bg-clr);
   transition: background-color 1000ms;
 }
-body {
-    font-family: Arial, sans-serif;
-    animation: backgroundAnimation 10s ease infinite;
-    background: linear-gradient(270deg, #FF5733, #33FF57, #3357FF);
-    background-size: 600% 600%;
-    margin: 0;
-    padding: 20px;
-}
 
-@keyframes backgroundAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 50% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-
-h1 {
-    text-align:left ;
-}
-/* Existing styles remain the same... */
-
-
-/* Media Query for Mobile Devices */
-@media (max-width: 600px) {
-    .battery-button {
-        width: 120px; /* Reduce button width */
-        height: 120px; /* Reduce button height */
-        font-size: 14px; /* Smaller font size */
-    }
-
-    .battery-button img {
-        width: 40px; /* Adjust image size for mobile */
-        top: 5px; /* Adjust position for mobile */
-    }
-
-    .button-group {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center buttons */
-    }
-}
-
-/* The rest of your styles... */
-
-
-
-
-
-
-
-@keyframes fade {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Adjust existing CSS for layout and styling */
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 10px;
-    text-align:left;
-}
-
-
-h1 {
-    text-align: center;
-}
-
-
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-#search-form {
-    margin-top: 5px;
-    display: flex; /* Align items in a row */
-}
-
-#search-input {
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px; /* Rounded corners on the left */
-}
-
-#search-form button {
-    padding: 6px 10px;
-    font-size: 16px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 0 5px 5px 0; /* Rounded corners on the right */
-    cursor: pointer;
-}
-.image-gallery {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-row {
-    display: flex; /* Use flexbox to arrange images */
-    justify-content: center; /* Center the images */
-    gap: 8 px; /* Space between images */
-}
-
-.gallery-image {
-    width: 100px; /* Fixed width for all images */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5px; /* Optional: rounded corners */
-}
-
-#search-form button:hover {
-    background-color: #2980b9;
-}
-
-#search-form i {
-    margin: 0; /* Remove margin for icon */
-}
 ul {
   list-style: none;
 }
@@ -223,7 +95,7 @@ img {
 /* ================= */
 
 .container {
-  padding: 1.0rem 2rem;
+  padding: 1.8rem 3rem;
 }
 @media screen and (max-width: 768px) {
   .container {
@@ -242,7 +114,7 @@ img {
 header {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.2rem;
+  gap: 1rem;
   align-items:left;
   justify-content: space-between;
 }
@@ -424,7 +296,7 @@ header {
   }
 }
 .hook-container {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 @media screen and (max-width: 348px) {
   .hook-container {
