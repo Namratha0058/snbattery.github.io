@@ -413,68 +413,78 @@
         "Volkswagen": ["Volkswagen Beetle 2.0L petrol", "Volkswagen jetta diesel new", "Volkswagen jetta diesel old", "Volkswagen passat diesel", "Volkswagen passat petrol", "Volkswagen phaeton 3.6 v6", "Volkswagen polo 1.2 diesel", "Volkswagen polo 1.2 petrol", "Volkswagen polo 1.6 petrol", "Volkswagen vento 1.6 diesel", "Volkswagen vento 1.6 petrol", "Volkswagen vento old", "Volkswagen passat hybrid", "Volkswagen vento 1.2 diesel", "Volkswagen vento 1.2 petrol", "Volkswagen polo .5 diesel", "Volkswagen tiguan 2.0 diesel"],
         "Toyota": ["Toyota Corolla petrol", "Toyota camry petrol", "Toyota corolla altis diesel", "Toyota corolla altis petrol", "Toyota etios diesel", "Toyota etios liva petrol", "Toyota etios petrol", "Toyota fortuner D4 diesel", "Toyota innova diesel ", "Toyota innova petrol", "Toyota qualis diesel", "Toyota qualis petrol", "Toyota lexus diesel", "Toyota innova crysta diesel", "Toyota land cruiser prado 4.5 diesel", "Toyota land cruiser petrol", "Toyota new innova special edition diesel"] 
   };
+	function showForm(category) {
+        document.getElementById('battery-form').style.display = 'block';
+        // Populate car models based on the manufacturer selection
+        const manufacturerSelect = document.getElementById('manufacturer');
+        manufacturerSelect.onchange = function() {
+            const carModelSelect = document.getElementById('car-model');
+            const selectedManufacturer = this.value;
+            carModelSelect.innerHTML = '<option value="">Select Car Model</option>'; // Reset the car model options
+            if (carModels[selectedManufacturer]) {
+                carModels[selectedManufacturer].forEach(model => {
+                    const option = document.createElement('option');
+                    option.value = model;
+                    option.textContent = model;
+                    carModelSelect.appendChild(option);
+                });
+            }
+        };
+    }
 
-
-    // Populate car models based on manufacturer selection
-    document.getElementById('manufacturer').addEventListener('change', function() {
-        const manufacturer = this.value;
-        const modelSelect = document.getElementById('car-model');
-
-        // Clear previous options
-        modelSelect.innerHTML = '<option value="">Select Car Model</option>';
-
-        if (manufacturer && carModels[manufacturer]) {
-            carModels[manufacturer].forEach(function(model) {
-                const option = document.createElement('option');
-                option.value = model;
-                option.textContent = model;
-                modelSelect.appendChild(option);
-            });
-        }
-    });
-
-    // Battery details based on car model
-    const batteryDetails = {
-        "KIA Carnival": { image: "path/to/kia_carnival_battery.jpg", description: "KIA Carnival battery description..." },
-        "MG HECTOR Petrol": { image: "path/to/mg_hector_battery.jpg", description: "MG HECTOR battery description..." },
-        // Add more models and their details as needed...
-    };
-
-    // Display battery info upon form submission
     function displayBatteryInfo(event) {
         event.preventDefault();
+        const manufacturer = document.getElementById('manufacturer').value;
         const carModel = document.getElementById('car-model').value;
+        const batteryBrand = document.getElementById('battery-brand').value;
+        const state = document.getElementById('state').value;
+        const city = document.getElementById('city').value;
+
+        // Example battery details
+        let batteryDetails = {
+            "KIA Carnival": { 
+                image: "13a.jpeg", 
+                description: "KIA Carnival battery description...", 
+                price: "$200" 
+            },
+            "MG HECTOR Petrol": { 
+                image: "path/to/mg_hector_battery.jpg", 
+                description: "MG HECTOR battery description...", 
+                price: "$180" 
+            },
+            // Add more models as needed
+        };
 
         const selectedDetails = batteryDetails[carModel];
         if (selectedDetails) {
-            const batteryInfo = document.getElementById('battery-info');
-            batteryInfo.innerHTML = `
-                <img src="${selectedDetails.image}" alt="${carModel} Battery" style="max-width: 100%; height: auto;">
-                <p>${selectedDetails.description}</p>
+            document.getElementById('battery-image').src = selectedDetails.image;
+            document.getElementById('battery-description').innerHTML = `
+                <strong>Description:</strong> ${selectedDetails.description}<br>
+                <strong>Price:</strong> ${selectedDetails.price}
             `;
-            document.getElementById('battery-display').style.display = 'block'; // Show the display section
+            
+            // Show the overlay
+            document.getElementById('overlay').style.display = 'flex';
         } else {
             alert("No battery details found for this car model.");
         }
     }
 
-    function showForm(type) {
-        document.getElementById('battery-form').style.display = 'block';
-        closeModal('inverter');
-        closeModal('bike');
-        document.getElementById('battery-display').style.display = 'none'; // Hide the battery display section
+    function closeOverlay() {
+        document.getElementById('overlay').style.display = 'none';
     }
 
-    function showModal(type) {
-        document.getElementById(type + '-modal').style.display = 'block';
-        document.getElementById('battery-form').style.display = 'none'; // Hide form
-        document.getElementById('battery-display').style.display = 'none'; // Hide the battery display section
+    function showModal(category) {
+        const modal = document.getElementById(category + '-modal');
+        modal.style.display = 'block';
     }
 
-    function closeModal(type) {
-        document.getElementById(type + '-modal').style.display = 'none';
+    function closeModal(category) {
+        const modal = document.getElementById(category + '-modal');
+        modal.style.display = 'none';
     }
 </script>
+
 
  
 
