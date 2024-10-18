@@ -74,6 +74,146 @@ img {
 .bg-clr__transition {
   transition: background-color 1s;
 }
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* Default font size */
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem; /* Padding for larger screens */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 2.5rem; /* Logo size */
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+}
+
+.nav-items li {
+  margin-left: 2rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hook-title {
+  font-size: 4rem; /* Hero title size */
+}
+
+.hero-btns-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.hero-btns-container button {
+  margin: 0 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+
+/* Product Section */
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.product-item {
+  width: 30%; /* Default width for desktop */
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.footer-title {
+  font-size: 2.5rem; /* Footer title size */
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+  .product-item {
+    width: 45%; /* Adjust for tablet screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1rem; /* Smaller font for mobile */
+  }
+
+  .container {
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-items {
+    flex-direction: column; /* Stack nav items vertically */
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .nav-items li {
+    margin-left: 0; /* Remove margin for stacked items */
+    margin-bottom: 1rem;
+  }
+
+  .hook-title {
+    font-size: 3rem; /* Adjust hero title size */
+  }
+
+  .hero-btns-container {
+    flex-direction: column; /* Stack buttons vertically */
+    margin-top: 1rem;
+  }
+
+  .product-item {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .footer-title {
+    font-size: 2rem; /* Adjust footer title size */
+  }
+}
+
 /* ================= */
 /* -- buttons -- */
 .button {
