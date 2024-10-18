@@ -267,64 +267,126 @@
     </style>
 </head>
 <body>
-  <main id="hero" class="main">
-        <section id="products" class="section section-two container">
-		<h1 style="text-align:center;text-decoration:overline";>SHOP BY CATEGORY</h1>
-            <div class="button-group">
-                <button class="battery-button" onclick="showForm('car')">
-                    <img src="car.jpg" alt="Car Battery">
-                    Car Battery
-                </button>
-                <button class="battery-button" onclick="showModal('bike')">
-                    <img src="bike.jpg" alt="Bike Battery">
-                    Bike Battery
-                </button>
-                <button class="battery-button" onclick="showModal('inverter')">
-                    <img src="inverter.jpeg" alt="Inverter Battery">
-                    Inverter Battery
-                </button>
-                <button class="battery-button" onclick="showForm('heavy')">
-                    <img src="heavy.jpeg" alt="Heavy Engine Battery">
-                    Heavy Engine Battery
-                </button>
+	<main id="hero" class="main">
+    <section id="products" class="section section-two container">
+        <h1 style="text-align:center;text-decoration:overline;">SHOP BY CATEGORY</h1>
+        <div class="button-group">
+            <button class="battery-button" onclick="showForm('car')">
+                <img src="car.jpg" alt="Car Battery">
+                Car Battery
+            </button>
+            <button class="battery-button" onclick="showModal('bike')">
+                <img src="bike.jpg" alt="Bike Battery">
+                Bike Battery
+            </button>
+            <button class="battery-button" onclick="showModal('inverter')">
+                <img src="inverter.jpeg" alt="Inverter Battery">
+                Inverter Battery
+            </button>
+            <button class="battery-button" onclick="showForm('heavy')">
+                <img src="heavy.jpeg" alt="Heavy Engine Battery">
+                Heavy Engine Battery
+            </button>
+        </div>
+
+        <div class="form-container" id="battery-form">
+            <h3>Battery Order Form</h3>
+            <form id="order-form" onsubmit="return displayBatteryInfo(event);">
+                <label for="manufacturer">Manufacturer:</label>
+                <select id="manufacturer" required>
+                    <option value="">Select Manufacturer</option>
+                    <option value="KIA">KIA</option>
+                    <option value="MG HECTOR">MG HECTOR</option>
+                    <option value="Maruti Suzuki">Maruti Suzuki</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Skoda">Skoda</option>
+                    <option value="Tata motors">Tata motors</option>
+                    <option value="FORD">FORD</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="BMW">BMW</option>
+                    <option value="MINI">MINI</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="JEEP">JEEP</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="VOLVO">VOLVO</option>
+                    <option value="Mahindra">Mahindra</option>
+                    <option value="Renault">Renault</option>
+                    <option value="ICML">ICML</option>
+                    <option value="Force motors">Force motors</option>
+                    <option value="BENTLEY">BENTLEY</option>
+                </select>
+
+                <label for="car-model">Car Model:</label>
+                <select id="car-model" required>
+                    <option value="">Select Car Model</option>
+                </select>
+
+                <label for="battery-brand">Battery Brand:</label>
+                <select id="battery-brand" required>
+                    <option value="">Select Battery Brand</option>
+                    <option value="ALL Brand">ALL Brand</option>
+                    <option value="Amaron">Amaron</option>
+                    <option value="Exide">Exide</option>
+                    <option value="PowerZONE">PowerZONE</option>
+                    <option value="SF Sonic">SF Sonic</option>
+                    <option value="BOSCH">BOSCH</option>
+                    <option value="Livfast">Livfast</option>
+                </select>
+
+                <label for="state">State:</label>
+                <select id="state" required>
+                    <option value="">Select State</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="maharashtra">Maharashtra</option>
+                </select>
+
+                <label for="city">City:</label>
+                <select id="city" required>
+                    <option value="">Select City</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Mysuru">Mysuru</option>
+                    <option value="Mumbai">Mumbai</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Battery Display Section -->
+        <div id="battery-display" style="display:none; margin-top: 20px;">
+            <h3>Selected Battery Information</h3>
+            <div id="battery-info"></div>
+        </div>
+
+        <!-- Modal for Inverter Battery -->
+        <div id="inverter-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('inverter')">&times;</span>
+                <h3>Inverter Battery Details</h3>
+                <img src="path/to/inverter-battery-image.jpg" alt="Inverter Battery">
+                <p>Description of the inverter battery goes here. Include features, specifications, and benefits.</p>
             </div>
+        </div>
 
-            <div class="form-container" id="battery-form">
-                <h3>Battery Order Form</h3>
-                <form id="order-form" onsubmit="return displayBatteryInfo(event);">
-                    <label for="manufacturer">Manufacturer:</label>
-                    <select id="manufacturer" required>
-                        <option value="">Select Manufacturer</option>
-                        <option value="KIA">KIA</option>
-                        <option value="MG HECTOR">MG HECTOR</option>
-						  <option value="Maruti Suzuki">Maruti Suzuki</option>
-						    <option value="Hyundai">Hyundai</option>
-							  <option value="Honda">Honda</option>
-							    <option value="Skoda">skoda</option>
-								  <option value="Tata motors">Tata motors</option>
-								    <option value="FORD">FORD</option>
-									  <option value="Fiat">Fiat</option>
-									    <option value="BMW">BMW</option>
-										  <option value="MINI">MINI</option>
-                        <option value="Audi">Audi</option>
-						 <option value="Jaguar">Jaguar</option>
-						  <option value="Volkswagen">Volkswagen</option>
-						  <option value="JEEP">JEEP</option>
-						  <option value="Chevrolet">Chevrolet</option>
-						  <option value="Toyota">Toyota</option>
-						  <option value="Nissan">Nissan</option>
-						   <option value="VOLVO">VOLVO</option>
-						    <option value="Mahindra">Mahindra</option>
-							 <option value="Renault">Renault</option>
-							  <option value="ICML">ICML</option>
-							  							  <option value="Force motors">Force motors</option>
-														  							  <option value="BENTLEY">BENT</option>
-                    </select>
+        <!-- Modal for Bike Battery -->
+        <div id="bike-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('bike')">&times;</span>
+                <h3>Bike Battery Details</h3>
+                <img src="path/to/bike-battery-image.jpg" alt="Bike Battery">
+                <p>Description of the bike battery goes here. Include features, specifications, and benefits.</p>
+            </div>
+        </div>
+    </section>
+</main>
 
-                    <label for="car-model">Car Model:</label>
-                    <select id="car-model" required>
-					<script>
-    const carModels = {
+<script>
+     const carModels = {
         "KIA": ["KIA Carnival", "KIA SELTOS DIESEL", "KIA SELTOS PETROL", "KIA SONET PETROL"],
 
         "MG HECTOR": ["MG HECTOR Petrol", "MG HECTOR Diesel", "MG Glowstar"],
@@ -352,10 +414,81 @@
         "Toyota": ["Toyota Corolla petrol", "Toyota camry petrol", "Toyota corolla altis diesel", "Toyota corolla altis petrol", "Toyota etios diesel", "Toyota etios liva petrol", "Toyota etios petrol", "Toyota fortuner D4 diesel", "Toyota innova diesel ", "Toyota innova petrol", "Toyota qualis diesel", "Toyota qualis petrol", "Toyota lexus diesel", "Toyota innova crysta diesel", "Toyota land cruiser prado 4.5 diesel", "Toyota land cruiser petrol", "Toyota new innova special edition diesel"] 
   };
 
+
+    // Populate car models based on manufacturer selection
     document.getElementById('manufacturer').addEventListener('change', function() {
         const manufacturer = this.value;
         const modelSelect = document.getElementById('car-model');
-        
+
+        // Clear previous options
+        modelSelect.innerHTML = '<option value="">Select Car Model</option>';
+
+        if (manufacturer && carModels[manufacturer]) {
+            carModels[manufacturer].forEach(function(model) {
+                const option = document.createElement('option');
+                option.value = model;
+                option.textContent = model;
+                modelSelect.appendChild(option);
+            });
+        }
+    });
+
+    // Battery details based on car model
+    const batteryDetails = {
+        "KIA Carnival": { image: "path/to/kia_carnival_battery.jpg", description: "KIA Carnival battery description..." },
+        "MG HECTOR Petrol": { image: "path/to/mg_hector_battery.jpg", description: "MG HECTOR battery description..." },
+        // Add more models and their details as needed...
+    };
+
+    // Display battery info upon form submission
+    function displayBatteryInfo(event) {
+        event.preventDefault();
+        const carModel = document.getElementById('car-model').value;
+
+        const selectedDetails = batteryDetails[carModel];
+        if (selectedDetails) {
+            const batteryInfo = document.getElementById('battery-info');
+            batteryInfo.innerHTML = `
+                <img src="${selectedDetails.image}" alt="${carModel} Battery" style="max-width: 100%; height: auto;">
+                <p>${selectedDetails.description}</p>
+            `;
+            document.getElementById('battery-display').style.display = 'block'; // Show the display section
+        } else {
+            alert("No battery details found for this car model.");
+        }
+    }
+
+    function showForm(type) {
+        document.getElementById('battery-form').style.display = 'block';
+        closeModal('inverter');
+        closeModal('bike');
+        document.getElementById('battery-display').style.display = 'none'; // Hide the battery display section
+    }
+
+    function showModal(type) {
+        document.getElementById(type + '-modal').style.display = 'block';
+        document.getElementById('battery-form').style.display = 'none'; // Hide form
+        document.getElementById('battery-display').style.display = 'none'; // Hide the battery display section
+    }
+
+    function closeModal(type) {
+        document.getElementById(type + '-modal').style.display = 'none';
+    }
+</script>
+
+ 
+
+    
+
+
+                      
+
+                   
+    <script>
+	 document.getElementById('manufacturer').addEventListener('change', function() {
+        const manufacturer = this.value;
+        const modelSelect = document.getElementById('car-model');
+
         // Clear previous options
         modelSelect.innerHTML = '<option value="">Select Car Model</option>';
 
@@ -371,117 +504,50 @@
 
     function displayBatteryInfo(event) {
         event.preventDefault();
-        // Implement the function to handle the form submission
-        alert("Form submitted!"); // Placeholder for your submission logic
-        return false; // Prevent default form submission
+        const manufacturer = document.getElementById('manufacturer').value;
+        const carModel = document.getElementById('car-model').value;
+        const batteryBrand = document.getElementById('battery-brand').value;
+        const state = document.getElementById('state').value;
+        const city = document.getElementById('city').value;
+
+        // Example battery details
+        let batteryDetails = {
+            "KIA Carnival": { image: "path/to/kia_carnival_battery.jpg", description: "KIA Carnival battery description..." },
+            "MG HECTOR Petrol": { image: "path/to/mg_hector_battery.jpg", description: "MG HECTOR battery description..." },
+            // Add more models as needed
+        };
+
+        const selectedDetails = batteryDetails[carModel];
+        if (selectedDetails) {
+            const batteryDisplay = document.getElementById('battery-display');
+            batteryDisplay.innerHTML = `
+                <h3>Selected Battery for ${carModel}</h3>
+                <img src="${selectedDetails.image}" alt="${carModel} Battery">
+                <p>${selectedDetails.description}</p>
+            `;
+            batteryDisplay.style.display = 'block'; // Show the display section
+        } else {
+            alert("No battery details found for this car model.");
+        }
     }
 
     function showForm(type) {
-        const formContainer = document.getElementById('battery-form');
-        formContainer.style.display = 'block'; // Show the form
+        document.getElementById('battery-form').style.display = 'block';
+        closeModal('inverter');
+        closeModal('bike');
     }
 
     function showModal(type) {
-        const modal = document.getElementById(type + '-modal');
-        modal.style.display = 'block'; // Show the modal
+        document.getElementById(type + '-modal').style.display = 'block';
+        document.getElementById('battery-form').style.display = 'none'; // Hide form
     }
 
     function closeModal(type) {
-        const modal = document.getElementById(type + '-modal');
-        modal.style.display = 'none'; // Hide the modal
+        document.getElementById(type + '-modal').style.display = 'none';
     }
-</script>
-
-                        <option value="">Select Car Model</option>
-                        <option value="EScape">EScape</option>
-                        <option value="Civic">Civic</option>
-                        <option value="Jetta">Jetta</option>
-                    </select>
-
-                    <label for="battery-brand">Battery Brand:</label>
-                    <select id="battery-brand" required>
-                        <option value="">Select Battery Brand</option>
-                        <option value="ALL Brand">ALL Brand</option>
-						                        <option value="Amaron">Amaron</option>
-												                        <option value="Exide">Exide</option>
-																		                        <option value="PowerZONE">PowerZONE</option> 
-																								<option value="SF Sonic">SF Sonic</option>                       
-								<option value="BOSCH">BOSCH</option>
-								
-                        <option value="Livfast">Livfast</option>
-                        <
-                    </select>
-
-                    <label for="state">State:</label>
-                    <select id="state" required>
-                        <option value="">Select State</option>
-                        <option value="karnataka">Karnataka</option>
-                        <option value="maharashtra">Maharashtra</option>
-                    </select>
-
-                    <label for="city">City:</label>
-                    <select id="city" required>
-                        <option value="">Select City</option>
-                        <option value="Bengaluru">Bengaluru</option>
-                        <option value="Mysuru">Mysuru</option>
-                        <option value="Mumbai">Mumbai</option>
-                    </select>
-
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-
-            <!-- Modal for Inverter Battery -->
-            <div id="inverter-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal('inverter')">&times;</span>
-                    <h3>Inverter Battery Details</h3>
-                    <img src="path/to/inverter-battery-image.jpg" alt="Inverter Battery">
-                    <p>Description of the inverter battery goes here. Include features, specifications, and benefits.</p>
-                </div>
-            </div>
-
-            <!-- Modal for Bike Battery -->
-            <div id="bike-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal('bike')">&times;</span>
-                    <h3>Bike Battery Details</h3>
-                    <img src="path/to/bike-battery-image.jpg" alt="Bike Battery">
-                    <p>Description of the bike battery goes here. Include features, specifications, and benefits.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script>
-        function showForm(type) {
-            document.getElementById('battery-form').style.display = 'block';
-            closeModal('inverter');
-            closeModal('bike');
-        }
-
-        function showModal(type) {
-            document.getElementById(type + '-modal').style.display = 'block';
-            document.getElementById('battery-form').style.display = 'none'; // Hide form
-        }
-
-        function closeModal(type) {
-            document.getElementById(type + '-modal').style.display = 'none';
-        }
-
-        function displayBatteryInfo(event) {
-            event.preventDefault();
-            const manufacturer = document.getElementById('manufacturer').value;
-            const carModel = document.getElementById('car-model').value;
-            const batteryBrand = document.getElementById('battery-brand').value;
-            const state = document.getElementById('state').value;
-            const city = document.getElementById('city').value;
-
-            const batteryImage = "C:\Users\hp\Desktop\oh\10a.jpeg"; // Update as necessary
-
-            // Redirect or display info as needed
-            window.location.href = `nam.html?manufacturer=${encodeURIComponent(manufacturer)}&carModel=${encodeURIComponent(carModel)}&batteryBrand=${encodeURIComponent(batteryBrand)}&state=${encodeURIComponent(state)}&city=${encodeURIComponent(city)}&image=${encodeURIComponent(batteryImage)}`;
-        }
+        
     </script>
+ 
  
  
 
