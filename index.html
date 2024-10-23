@@ -518,23 +518,23 @@
 </main>
 
 <script>
-function showModal(type) {
-    if (type === 'bike') {
-        document.getElementById("bikeModal").style.display = "block";
+    function showModal(type) {
+        if (type === 'bike') {
+            document.getElementById("bikeModal").style.display = "block";
+        }
     }
-}
 
-function closeModal() {
-    document.getElementById("bikeModal").style.display = "none";
-}
-
-// Close the modal if the user clicks anywhere outside of it
-window.onclick = function(event) {
-    const modal = document.getElementById("bikeModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
+    function closeModal() {
+        document.getElementById("bikeModal").style.display = "none";
     }
-}
+
+    // Close the modal if the user clicks anywhere outside of it
+    window.onclick = function(event) {
+        const modal = document.getElementById("bikeModal");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
 
 function showModal(type) {
         if (type === 'inverter') {
