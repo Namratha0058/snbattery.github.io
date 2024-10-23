@@ -477,7 +477,7 @@
 </main>
 
 <script>
-    function showModal(type) {
+     function showModal(type) {
         if (type === 'inverter') {
             document.getElementById('inverterModal').style.display = 'block';
         }
@@ -527,7 +527,7 @@
         }
     });
     
-     const carModels = {
+    const carModels = {
         "KIA": ["KIA Carnival", "KIA SELTOS DIESEL", "KIA SELTOS PETROL", "KIA SONET PETROL"],
 
         "MG HECTOR": ["MG HECTOR Petrol", "MG HECTOR Diesel", "MG Glowstar"],
@@ -554,14 +554,15 @@
         "Volkswagen": ["Volkswagen Beetle 2.0L petrol", "Volkswagen jetta diesel new", "Volkswagen jetta diesel old", "Volkswagen passat diesel", "Volkswagen passat petrol", "Volkswagen phaeton 3.6 v6", "Volkswagen polo 1.2 diesel", "Volkswagen polo 1.2 petrol", "Volkswagen polo 1.6 petrol", "Volkswagen vento 1.6 diesel", "Volkswagen vento 1.6 petrol", "Volkswagen vento old", "Volkswagen passat hybrid", "Volkswagen vento 1.2 diesel", "Volkswagen vento 1.2 petrol", "Volkswagen polo .5 diesel", "Volkswagen tiguan 2.0 diesel"],
         "Toyota": ["Toyota Corolla petrol", "Toyota camry petrol", "Toyota corolla altis diesel", "Toyota corolla altis petrol", "Toyota etios diesel", "Toyota etios liva petrol", "Toyota etios petrol", "Toyota fortuner D4 diesel", "Toyota innova diesel ", "Toyota innova petrol", "Toyota qualis diesel", "Toyota qualis petrol", "Toyota lexus diesel", "Toyota innova crysta diesel", "Toyota land cruiser prado 4.5 diesel", "Toyota land cruiser petrol", "Toyota new innova special edition diesel"] 
   };
-  function showForm(category) {
+
+
+    function showForm() {
         document.getElementById('battery-form').style.display = 'block';
-        // Populate car models based on the manufacturer selection
         const manufacturerSelect = document.getElementById('manufacturer');
         manufacturerSelect.onchange = function() {
             const carModelSelect = document.getElementById('car-model');
             const selectedManufacturer = this.value;
-            carModelSelect.innerHTML = '<option value="">Select Car Model</option>'; // Reset the car model options
+            carModelSelect.innerHTML = '<option value="">Select Car Model</option>';
             if (carModels[selectedManufacturer]) {
                 carModels[selectedManufacturer].forEach(model => {
                     const option = document.createElement('option');
@@ -574,56 +575,94 @@
     }
 
     function displayBatteryInfo(event) {
-        event.preventDefault();
-        const manufacturer = document.getElementById('manufacturer').value;
-        const carModel = document.getElementById('car-model').value;
-        const batteryBrand = document.getElementById('battery-brand').value;
-        const state = document.getElementById('state').value;
-        const city = document.getElementById('city').value;
+    event.preventDefault();
+    const carModel = document.getElementById('car-model').value;
 
-        // Example battery details
-        let batteryDetails = {
-            "KIA Carnival": { 
-                image: "13a.jpeg", 
-                description: "KIA Carnival battery description...", 
-                price: "$200" 
+    // Enhanced battery details
+    let batteryDetails = {
+        "KIA Carnival": [
+            {
+                modelName: "Exide FEY0-EY105D31L",
+                image: "C:/Users/hp/Desktop/oh/ee.jpg",
+                description: "A high-quality battery designed for various driving conditions.",
+                price: "With Old Battery(Same Ah): Rs. 6049.<br>Without Old Battery: Rs. 8249",
+                features: "Reliable and durable.\nOffers high performance under various conditions.\nDesigned for longevity and efficiency.",
+                recommended: "Best suited for urban and highway driving.",
             },
-            "MG HECTOR Petrol": { 
-                image: "path/to/mg_hector_battery.jpg", 
-                description: "MG HECTOR battery description...", 
-                price: "$180" 
+            {
+                modelName: "Amaron AAM-GO-00105D31L",
+                image: "C:/Users/hp/Desktop/oh/ee2.png",
+                description: "A premium battery with fast recharge capabilities.",
+                price: "With Old Battery(Same Ah): Rs. 6049.<br>Without Old Battery: Rs. 8249",
+                features: "High performance with fast recharge.\nResistant to extreme temperatures.",
+                recommended: "Ideal for city driving and daily commutes.",
+            }
+        ],
+        "MG HECTOR Petrol": [
+            {
+                modelName: "MG HECTOR Battery Model 1",
+                image: "path/to/mg_hector_battery_1.jpg",
+                description: "Designed for long-lasting power and stability.",
+                price: "$180",
+                features: "Innovative design for better efficiency.\nBuilt to withstand wear and tear.",
+                recommended: "Best for urban commuting and occasional road trips.",
             },
-            // Add more models as needed
-        };
+            {
+                modelName: "MG HECTOR Battery Model 2",
+                image: "path/to/mg_hector_battery_2.jpg",
+                description: "Engineered for reliability and performance.",
+                price: "$200",
+                features: "Environmentally friendly materials.\nDesigned for optimal performance.",
+                recommended: "Great for mixed driving conditions and families.",
+            }
+        ],
+    };
 
-        const selectedDetails = batteryDetails[carModel];
-        if (selectedDetails) {
-            document.getElementById('battery-image').src = selectedDetails.image;
-            document.getElementById('battery-description').innerHTML = `
-                <strong>Description:</strong> ${selectedDetails.description}<br>
-                <strong>Price:</strong> ${selectedDetails.price}
+    const selectedDetails = batteryDetails[carModel];
+    const batteryImageContainer = document.getElementById('battery-info');
+    batteryImageContainer.innerHTML = '';
+
+    if (selectedDetails) {
+        selectedDetails.forEach(detail => {
+            const detailDiv = document.createElement('div');
+            const orderLink = `https://wa.me/+919902555479?text=I%20want%20to%20order%20${encodeURIComponent(detail.modelName)}%20for%20${encodeURIComponent(carModel)}.%0ADescription:%20${encodeURIComponent(detail.description)}%0APrice:%20${encodeURIComponent(detail.price)}%0AFeatures:%20${encodeURIComponent(detail.features.replace(/\n/g, ' '))}%0ARecommended%20For:%20${encodeURIComponent(detail.recommended.replace(/\n/g, ' '))}`;
+
+            detailDiv.innerHTML = `
+                <img src="${detail.image}" alt="${detail.modelName}" style="width: 100px; height: auto;">
+                <h4 style="color: black;">${detail.modelName}</h4>
+                <p style="color: black;"><strong>Description:</strong> ${detail.description}</p>
+                <p style="color: black;"><strong>Features:</strong><br>${detail.features.replace(/\n/g, '<br>')}</p>
+                <p style="color: black;"><strong>Recommended For:</strong><br>${detail.recommended.replace(/\n/g, '<br>')}</p><br><br>
+                <a href="${orderLink}" class="large-button" target="_blank">Order Now</a>
             `;
-            
-            // Show the overlay
-            document.getElementById('overlay').style.display = 'flex';
-        } else {
-            alert("No battery details found for this car model.");
-        }
-    }
+            batteryImageContainer.appendChild(detailDiv);
+        });
 
-    function closeOverlay() {
-        document.getElementById('overlay').style.display = 'none';
-    }
+        // Create and append go back button
+        const backButton = document.createElement('button');
+        backButton.innerText = 'Go Back';
+        backButton.className = 'close-button'; // Add styling class
+        backButton.onclick = function() {
+            document.getElementById('overlay').style.display = 'none'; // Close the overlay
+            // Optionally, navigate to a specific page (e.g., homepage)
+            // window.location.href = 'homepage.html'; // Uncomment to redirect
+        };
+        batteryImageContainer.appendChild(backButton);
 
-    function showModal(category) {
-        const modal = document.getElementById(category + '-modal');
-        modal.style.display = 'block';
+        // Show the overlay
+        document.getElementById('overlay').style.display = 'flex';
+    } else {
+        alert("No battery details found for this car model.");
     }
+}
 
-    function closeModal(category) {
-        const modal = document.getElementById(category + '-modal');
-        modal.style.display = 'none';
-    }
+function closeOverlay() {
+    document.getElementById('overlay').style.display = 'none';
+}
+
+   
+    
+    
 </script>
     
 	
