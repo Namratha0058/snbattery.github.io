@@ -289,7 +289,7 @@
             </button>
         </div>
     </section>
-	<div id="bikeModal" class="modal-bike">
+	 <div id="bikeModal" class="modal-bike">
         <div class="modal-content-bike">
             <span class="close-bike" onclick="closeModal()">&times;</span>
             <h2>Bike Battery Options</h2>
@@ -322,6 +322,7 @@
             </div>
         </div>
     </div>
+	
 	<div id="inverterModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('inverterModal')">&times;</span>
@@ -518,6 +519,24 @@
 
 <script>
 function showModal(type) {
+    if (type === 'bike') {
+        document.getElementById("bikeModal").style.display = "block";
+    }
+}
+
+function closeModal() {
+    document.getElementById("bikeModal").style.display = "none";
+}
+
+// Close the modal if the user clicks anywhere outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById("bikeModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+function showModal(type) {
         if (type === 'inverter') {
             document.getElementById('inverterModal').style.display = 'block';
         }
@@ -613,7 +632,7 @@ function showModal(type) {
             }
         };
     }
-
+    
     function displayBatteryInfo(event) {
     event.preventDefault();
     const carModel = document.getElementById('car-model').value;
