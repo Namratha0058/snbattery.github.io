@@ -632,15 +632,15 @@ function showModal(type) {
         "KIA Carnival": [
             {
                 modelName: "Exide FEY0-EY105D31L",
-                image: "C:/Users/hp/Desktop/oh/ee.jpg",
+                image: "ee.jpg",
                 description: "A high-quality battery designed for various driving conditions.",
-                price: "With Old Battery(Same Ah): Rs. 6049.<br>Without Old Battery: Rs. 8249",
+                price: "With Old Battery(Same Ah): Rs. 6049.<br>Without Old Battery: Rs. 8249<br>Warranty: 60 Months (30 Months Full Replacement + 30 Months Pro Rata)",
                 features: "Reliable and durable.\nOffers high performance under various conditions.\nDesigned for longevity and efficiency.",
                 recommended: "Best suited for urban and highway driving.",
             },
             {
                 modelName: "Amaron AAM-GO-00105D31L",
-                image: "C:/Users/hp/Desktop/oh/ee2.png",
+                image: "v.png",
                 description: "A premium battery with fast recharge capabilities.",
                 price: "With Old Battery(Same Ah): Rs. 6049.<br>Without Old Battery: Rs. 8249",
                 features: "High performance with fast recharge.\nResistant to extreme temperatures.",
@@ -734,8 +734,9 @@ function showModal(type) {
                 <img src="${detail.image}" alt="${detail.modelName}" style="width: 100px; height: auto;">
                 <h4 style="color: black;">${detail.modelName}</h4>
                 <p style="color: black;"><strong>Description:</strong> ${detail.description}</p>
+		<p style="color: black;"><strong>Price:</strong><br>${detail.price.replace(/\n/g, '<br>')}</p>
                 <p style="color: black;"><strong>Features:</strong><br>${detail.features.replace(/\n/g, '<br>')}</p>
-		<p style="color: black;"><strong>Features:</strong><br>${detail.price.replace(/\n/g, '<br>')}</p>
+		
                 <p style="color: black;"><strong>Recommended For:</strong><br>${detail.recommended.replace(/\n/g, '<br>')}</p><br><br>
                 <a href="${orderLink}" class="large-button" target="_blank">Order Now</a>
             `;
