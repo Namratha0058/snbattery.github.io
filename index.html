@@ -629,7 +629,6 @@ function showModal(type) {
 
     // Enhanced battery details
     let batteryDetails = {
-       let batteryDetails = {
         "KIA Carnival": [
             {
                 modelName: "Exide FEY0-EY105D31L",
@@ -667,8 +666,7 @@ function showModal(type) {
             }
         ],
     };
-	
-	 
+
     const selectedDetails = batteryDetails[carModel];
     const batteryImageContainer = document.getElementById('battery-info');
     batteryImageContainer.innerHTML = '';
@@ -682,7 +680,6 @@ function showModal(type) {
                 <img src="${detail.image}" alt="${detail.modelName}" style="width: 100px; height: auto;">
                 <h4 style="color: black;">${detail.modelName}</h4>
                 <p style="color: black;"><strong>Description:</strong> ${detail.description}</p>
-		<p style="color: black;"><strong>price:</strong> ${detail.price}</p>
                 <p style="color: black;"><strong>Features:</strong><br>${detail.features.replace(/\n/g, '<br>')}</p>
                 <p style="color: black;"><strong>Recommended For:</strong><br>${detail.recommended.replace(/\n/g, '<br>')}</p><br><br>
                 <a href="${orderLink}" class="large-button" target="_blank">Order Now</a>
