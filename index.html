@@ -275,7 +275,7 @@
                 <img src="car.jpg" alt="Car Battery">
                 Car Battery
             </button>
-              <button class="battery-button" onclick="showModal('bike')">
+             <button class="battery-button" onclick="showModal('bike')">
                 <img src="bike.jpg" alt="Bike Battery">
                 Bike Battery
             </button>
@@ -289,40 +289,34 @@
             </button>
         </div>
     </section>
-	 <div id="bikeModal" class="modal-bike">
-         <div class="modal-content-bike">
-            <span class="close-bike" onclick="closeModal()">&times;</span>
-            <h2>Bike Battery Options</h2>
-
-            <div class="battery-option-bike">
-                <img src="bike1.jpg" alt="Battery Type A" style="width:100%;">
-                <h3>Battery Type A</h3>
-                <p>Description: Great for city bikes.</p>
-                <p>Price: $120</p>
-                <p>Recommended: Best for short rides and daily commutes.</p>
-                <a href="https://wa.me/yourwhatsappnumber?text=I%20would%20like%20to%20order%20Battery%20Type%20A.%20Price:%20120" class="order-button-bike">Order Now</a>
+	<div id="bikeModal" class="modal">
+        <span class="close" onclick="closeBikeModal()">&times;</span>
+        <div class="modal-content">
+            <img class="main-image" id="modalImage" src="bike.jpg" alt="Bike Battery Image">
+            <div class="modal-details">
+                <h2>Model: Bike Battery X100</h2>
+                <p>This high-performance bike battery offers exceptional reliability and long-lasting power for your rides.</p>
+                <p><strong>Price: $99.99</strong></p>
+                <p><strong>Recommended For:</strong> Mountain bikes, road bikes, and electric bikes.</p>
             </div>
-
-            <div class="battery-option-bike">
-                <img src="bike2.jpg" alt="Battery Type B" style="width:100%;">
-                <h3>Battery Type B</h3>
-                <p>Description: Perfect for mountain bikes.</p>
-                <p>Price: $180</p>
-                <p>Recommended: Ideal for rugged terrains and longer rides.</p>
-                <a href="https://wa.me/yourwhatsappnumber?text=I%20would%20like%20to%20order%20Battery%20Type%20B.%20Price:%20180" class="order-button-bike">Order Now</a>
+            <div class="additional-images">
+                <h3>Additional Images:</h3>
+                <div class="thumbnail-images">
+                    <img src="bike-thumbnail1.jpg" alt="Thumbnail 1" onclick="changeImage('bike-thumbnail1.jpg')">
+                    <img src="bike-thumbnail2.jpg" alt="Thumbnail 2" onclick="changeImage('bike-thumbnail2.jpg')">
+                    <img src="bike-thumbnail3.jpg" alt="Thumbnail 3" onclick="changeImage('bike-thumbnail3.jpg')">
+                    <img src="bike-thumbnail4.jpg" alt="Thumbnail 4" onclick="changeImage('bike-thumbnail4.jpg')">
+                </div>
             </div>
-
-            <div class="battery-option-bike">
-                <img src="bike3.jpg" alt="Battery Type C" style="width:100%;">
-                <h3>Battery Type C</h3>
-                <p>Description: For electric bikes with high demand.</p>
-                <p>Price: $200</p>
-                <p>Recommended: Great for performance and endurance.</p>
-                <a href="https://wa.me/yourwhatsappnumber?text=I%20would%20like%20to%20order%20Battery%20Type%20C.%20Price:%20200" class="order-button-bike">Order Now</a>
+            <div class="more-details">
+                <h3>More Information:</h3>
+                <p><strong>Features:</strong> Lightweight, waterproof, quick charging, and eco-friendly.</p>
+                <p><strong>Warranty:</strong> 2 years.</p>
+                <p><strong>Customer Reviews:</strong> "Excellent performance!" - Jane D.</p>
+                <p><strong>Usage Tips:</strong> Charge regularly for optimal performance.</p>
             </div>
         </div>
     </div>
-	
 	<div id="inverterModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('inverterModal')">&times;</span>
@@ -506,29 +500,32 @@
 
         
         <!-- Modal for Bike Battery -->
-        
-  
+        <div id="bike-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('bike')">&times;</span>
+                <h3>Bike Battery Details</h3>
+                <img src="path/to/bike-battery-image.jpg" alt="Bike Battery">
+                <p>Description of the bike battery goes here.</p>
+            </div>
+        </div>
+    </section>
 </main>
 
 <script>
-   function showModal(type) {
-        if (type === 'bike') {
-            document.getElementById("bikeModal").style.display = "block";
-        }
-    }
+function showBikeModal() {
+    const bikeModal = document.getElementById("bikeModal");
+    bikeModal.style.display = "block"; // Show the modal
+}
 
-    function closeModal() {
-        document.getElementById("bikeModal").style.display = "none";
-    }
+function closeBikeModal() {
+    const bikeModal = document.getElementById("bikeModal");
+    bikeModal.style.display = "none"; // Hide the modal
+}
 
-    // Close the modal if the user clicks anywhere outside of it
-    window.onclick = function(event) {
-        const modal = document.getElementById("bikeModal");
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    }
-
+function changeImage(imageSrc) {
+    const modalImage = document.getElementById("modalImage");
+    modalImage.src = imageSrc; // Change the main image to the clicked thumbnail
+}
 function showModal(type) {
         if (type === 'inverter') {
             document.getElementById('inverterModal').style.display = 'block';
@@ -583,8 +580,8 @@ function showModal(type) {
         "KIA": ["KIA Carnival", "KIA SELTOS DIESEL", "KIA SELTOS PETROL", "KIA SONET PETROL"],
 
         "MG HECTOR": ["MG HECTOR Petrol", "MG HECTOR Diesel", "MG Glowstar"],
-        "Maruti Suzuki": ["Maruthi suzuki alto 800 petrol", "Maruthi suzuki A star petrol", "Maruthi suzuki Celerio petr+ol", "Maruthi suzuki Celerio petrol", "Maruthi sazuki ciaz petrol", "Maruthi suzuki ciaz DIESEL", "Maruthi suzuki ciaz diesel hybrid", "maruthi suzuki ciaz petrol hybrid", "Maruthi suzuki swift diesel", "Maruthi suzuki swift petrol", "Maruthi suzuki vitra brezza diesel", "Maruthi suzuki new baleno petrol", "Maruthi suzuki new baleno diesel", "Maruthi suzuki ignis petrol", "Maruthi suzuki ertiga petrol"],
-        "Hyundai": ["Hyundai EON petrol", "Hyundai grand i10 petrol",, "Hyundai grand i10 petrol", "Hyundai Creta petrol", "Hyundai creta diesel", "Hyundai Getz 1.6 diesel", "Hyundai i20 sportz petrol", "Hyundai i20 sportz diesel", "Hyundai verna 1.4 diesel", "Hyundai verna 1.4 petrol", "Hyundai xcent diesel", "Hyundai xcent petrol", "Hyundai elite i20 petrol", "Hyundai elite i20 diesel", "Hyundai tucson diesel", "Hyundai tuscon petrol", "Hyundai venue petrol", "Hyundai venue diesel", "Hyundai venue petrol", "Hyundai aura diesel", "Hyundai Elantra 1.6 diesel", "Hyundai i20 sprotz petrol(after 2015)", "Hyundai verna CRDi diesel(after 2017)-Next Gen"],
+        "Maruti Suzuki": ["Maruthi suzuki alto 800 petrol", "Maruthi suzuki A star petrol", "Maruthi suzuki Celerio petrol", "Maruthi sazuki ciaz petrol", "Maruthi suzuki ciaz DIESEL", "Maruthi suzuki ciaz diesel hybrid", "maruthi suzuki ciaz petrol hybrid", "Maruthi suzuki swift diesel", "Maruthi suzuki swift petrol", "Maruthi suzuki vitra brezza diesel", "Maruthi suzuki new baleno petrol", "Maruthi suzuki new baleno diesel", "Maruthi suzuki ignis petrol", "Maruthi suzuki ertiga petrol"],
+        "Hyundai": ["Hyundai EON petrol", "Hyundai grand i10 petrol", "Hyundai grand i10 petrol", "Hyundai Creta petrol", "Hyundai creta diesel", "Hyundai Getz 1.6 diesel", "Hyundai i20 sportz petrol", "Hyundai i20 sportz diesel", "Hyundai verna 1.4 diesel", "Hyundai verna 1.4 petrol", "Hyundai xcent diesel", "Hyundai xcent petrol", "Hyundai elite i20 petrol", "Hyundai elite i20 diesel", "Hyundai tucson diesel", "Hyundai tuscon petrol", "Hyundai venue petrol", "Hyundai venue diesel", "Hyundai venue petrol", "Hyundai aura diesel", "Hyundai Elantra 1.6 diesel", "Hyundai i20 sprotz petrol(after 2015)", "Hyundai verna CRDi diesel(after 2017)-Next Gen"],
         "Honda": ["Honda AMAZE petrol", "Honda AMAZE diesel", "Honda CITY petrol", "Honda CITY disel", "Honda BRIO petrol", "Honda JAZZ petrol", "Honda JAZZ diesel", "Honda Mobilio petrol", "Honda Mobilio diesel", "Honda BR-V-diesel", "Honda BR-V-petrol", "Honda WR-V petrol", "Honda WR-v diesel", "Honda CR-V PETROL", "Honda amaza diesel", "Honda ACCORD petrol", "Honda CIVIC petrol"],
         "Skoda": ["Skoda Rapid diesel", "Skoda Rapid petrol", "SKODA Octavia diesel", "Skoda Octavia petrol", "Skoda Superb petrol", "Skoda Suberb diesel", "Skoda yeti 2.0 diesel", "Skoda Fabia diesel", "Skoda Fabia petrol", "Skoda Laura diesel", "Skoda Laura petrol", "Skoda Comdi diesel"],
         "Tata motors": ["TATA NEXON diesel", "TATA NEXON petrol", "TATA HARRIER diesel", "TATA TIAGO Petrol", "TATA TIAGO diesel", "TATA HEXA diesel", "TATA ZEST petrol", "TATA ZEST diesel", "TATA SAFARI STROME diesel", "TATA SAFARI Diesel", "TATA SUMO diesel", "TATA SAFARI DICOR diesel", "TATA INDIGO diesel"],
@@ -601,8 +598,8 @@ function showModal(type) {
         "ICML": ["ICML Delite diesel", "ICML Rhino diesel", "ICML winner diesel", "ICML xcitor diesel", "ICML xcitor diesel"],
         "Force motors": ["Force Motors Minidor", "Force Motors Balwan-330-25Hp", "Force Motors Balwan-400-35Hp", "Force Motors orchard", "Force Motors Balwan-550-52Hp", "Force Motors Balwan-400-35Hp", "Force Motors Balwan-450-40Hp", "Force Motors OX 25", "Force Motors TRAVELLER DIESEL"],
         "BENTLEY": ["Bentley flying spur petrol", "Bentley continental petrol", "Bentley Bentayga petrol", "Bentley mulsanne petrol"],
-	"Chevrolet": ["Chevrolet Opel Vectra diesel", "Chevrolet opel vectra petrol", "Chevrolet enjoy diesel", "Chevrolet forester petrol", "Chevrolet opel corse 1.6 petrol", "Chevrolet opel vectra petrol", "Chevrolet corsa petrol", "Chevrolet opel swing petrol", "Chevrolet optra 1.8 petrol", "Chevrolet optra platnium petrol", "Chevrolet optra royal 1.6 petrol", "Chevrolet SRV petrol", "Chevrolet SRV petrol", "Chevrolet starlite diesel", "Chevrolet 1.4 petrol", "Chevrolet opel 1.6 petrol", "Chevrolet enjoy petrol", "Chevrolet optra 1.6 petrol", "Chevrolet Beat petrol", "Chevrolet optra magnum diesel", "Chevrolet Beat diesel"],                                                
-        "Nissan": ["Nissan Evalia diesel", "Nissan Micra 1.5L diesel", "Nissan Micra 1.2L petrol", "Nissan sunny 1.5L diesel", "Nissan sunny 1.5L petrol", "Nissan Micra 1.5L diesel", "Nissan Teana 250XL Petrol", "Nissan Terrano diesel", "Nissan Terrano petrol", "Nissan X trail diesel", "Nissan datsun go petrol", "Nissan evalia diesel", "Nissan Micra petrol"],
+		"Chevrolet": ["Chevrolet Opel Vectra diesel", "Chevrolet opel vectra petrol"  , "Chevrolet enjoy diesel", "Chevrolet forester petrol", "Chevrolet opel corse 1.6 petrol", "Chevrolet opel vectra petrol", "Chevrolet corsa petrol", "Chevrolet opel swing petrol", "Chevrolet optra 1.8 petrol", "Chevrolet optra platnium petrol", "Chevrolet optra royal 1.6 petrol", "Chevrolet SRV petrol", "Chevrolet SRV petrol", "Chevrolet starlite diesel", "Chevrolet 1.4 petrol", "Chevrolet opel 1.6 petrol", "Chevrolet enjoy petrol", "Chevrolet optra 1.6 petrol", "Chevrolet Beat petrol", "Chevrolet optra magnum diesel", "Chevrolet Beat diesel"],                                                
+        "Nissan": ["Nissan Evalia diesel", "Nissan Micra 1.5L diesel", "Nissan Micra 1.2L petrol", "Nissan sunny 1.5L diesel", "Nissan sunny 1.5L diesel", "Nissan Micra 1.5L petrol", "Nissan Micra 1.5L diesel", "Nissan Micra 1.5L diesel", "Nissan Teana 250XL Petrol", "Nissan Micra 1.5L diesel", "Nissan Terrano diesel", "Nissan Terrano petrol", "Nissan Micra 1.5L diesel", "Nissan X trail diesel", "Nissan datsun go petrol", "Nissan evalia diesel", "Nissan Micra petrol", "Nissan Micra 1.5L diesel"],
         "Volkswagen": ["Volkswagen Beetle 2.0L petrol", "Volkswagen jetta diesel new", "Volkswagen jetta diesel old", "Volkswagen passat diesel", "Volkswagen passat petrol", "Volkswagen phaeton 3.6 v6", "Volkswagen polo 1.2 diesel", "Volkswagen polo 1.2 petrol", "Volkswagen polo 1.6 petrol", "Volkswagen vento 1.6 diesel", "Volkswagen vento 1.6 petrol", "Volkswagen vento old", "Volkswagen passat hybrid", "Volkswagen vento 1.2 diesel", "Volkswagen vento 1.2 petrol", "Volkswagen polo .5 diesel", "Volkswagen tiguan 2.0 diesel"],
         "Toyota": ["Toyota Corolla petrol", "Toyota camry petrol", "Toyota corolla altis diesel", "Toyota corolla altis petrol", "Toyota etios diesel", "Toyota etios liva petrol", "Toyota etios petrol", "Toyota fortuner D4 diesel", "Toyota innova diesel ", "Toyota innova petrol", "Toyota qualis diesel", "Toyota qualis petrol", "Toyota lexus diesel", "Toyota innova crysta diesel", "Toyota land cruiser prado 4.5 diesel", "Toyota land cruiser petrol", "Toyota new innova special edition diesel"] 
   };
@@ -625,7 +622,7 @@ function showModal(type) {
             }
         };
     }
-    
+
     function displayBatteryInfo(event) {
     event.preventDefault();
     const carModel = document.getElementById('car-model').value;
