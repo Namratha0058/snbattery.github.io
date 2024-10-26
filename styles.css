@@ -120,43 +120,6 @@ body {
             text-align: center;
             color: #333; /* Dark text for headers */
         }
-
-
-header {
-    padding: 0; /* Remove any padding from header */
-}
-
-.logo {
-    margin: 0; /* Remove margin */
-}
-
-.navbar {
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
-}
-
-.nav-items {
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
-}
-
-/* For mobile */
-@media (max-width: 768px) {
-    .logo {
-        margin-bottom: 0; /* Ensure there's no space below the logo */
-    }
-
-    .nav-items {
-        display: none; /* Hide nav items initially */
-        margin-top: 0; /* Remove space if needed */
-    }
-
-    .nav-items.show {
-        display: block; /* Show nav items when active */
-    }
-}
-
-
 /* Container for the image row */
 .image-row {
     display: flex;
@@ -180,19 +143,19 @@ header {
 
 /* Basic styles for navigation items */
 .nav-item {
-    margin-right: 15px; /* Adjust as needed */
+    margin-right: 9px; /* Adjust as needed */
 }
 
 /* Responsive styles */
 @media (max-width: 600px) {
     .nav-item {
-        margin-bottom: 10px; /* Space between items on mobile */
+        margin-bottom: 5px; /* Space between items on mobile */
         margin-right: 0; /* Remove right margin on mobile */
     }
     
     .nav-items {
         display: flex;
-        flex-direction: column; /* Stack items vertically on mobile */
+        flex-direction: row; /* Stack items vertically on mobile */
     }
 }
 
