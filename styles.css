@@ -237,26 +237,7 @@ body {
 }
 
 /* Show navbar when active */
-.navbar.active {
-    display: block; /* Show the navbar */
-}
 
-/* Add media query for mobile view */
-@media (min-width: 768px) {
-    .navbar {
-        display: flex; /* Default flex layout for larger screens */
-        position: static; /* Position it normally */
-        height: auto; /* Auto height */
-    }
-    .nav-toggle {
-        display: none; /* Hide toggle button on larger screens */
-    }
-}
-body, html {
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
-    height: 100%; /* Ensure full height */
-}
 
 .container {
     position: relative; /* Ensure the container can position the nav absolutely */
