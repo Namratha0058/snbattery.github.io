@@ -120,15 +120,33 @@ body {
             text-align: center;
             color: #333; /* Dark text for headers */
         }
+header {
+    padding: 0; /* Remove any padding from header */
+}
+
+.logo {
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+}
+
+.navbar {
+    margin: 0; /* Remove margin from navbar */
+    padding: 0; /* Remove padding from navbar */
+}
+
+.nav-items {
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+}
+
+/* Ensure this applies only on mobile devices */
 @media (max-width: 768px) {
     .logo {
         margin-bottom: 0; /* Adjust or remove margin */
-        padding-bottom: 0; /* Adjust or remove padding */
     }
     
     .nav-items {
-        margin-top: 0; /* Adjust or remove margin */
-        padding-top: 0; /* Adjust or remove padding */
+        margin-top: 0; /* Remove any space above */
     }
 }
 
