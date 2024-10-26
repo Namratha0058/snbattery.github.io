@@ -120,6 +120,52 @@ body {
             text-align: center;
             color: #333; /* Dark text for headers */
         }
+.main {
+    padding: 20px; /* Add padding around the main section */
+}
+
+.section {
+    text-align: center; /* Center-align text */
+    margin: 20px 0; /* Add margin between sections */
+}
+
+.hook-title {
+    font-size: 1.5em; /* Adjust font size */
+}
+
+.hook-sub_title {
+    font-size: 2em; /* Adjust font size */
+    margin-bottom: 20px; /* Add space below subtitle */
+    text-decoration: underline;
+}
+
+.hero-btns-container {
+    display: flex; /* Use flexbox for button alignment */
+    justify-content: center; /* Center the buttons */
+    gap: 10px; /* Add space between buttons */
+}
+
+.button {
+    padding: 10px 20px; /* Adjust padding for buttons */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.hero-lady-img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 500px; /* Limit max width for larger screens */
+    margin-top: 20px; /* Add space above image */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero-btns-container {
+        flex-direction: column; /* Stack buttons on smaller screens */
+        gap: 10px; /* Space between stacked buttons */
+    }
+}
+
 /* Container for the image row */
 .image-row {
     display: flex;
