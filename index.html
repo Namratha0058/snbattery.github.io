@@ -513,6 +513,11 @@
 </main>
 
 <script>
+	document.getElementById('nav-toggle').addEventListener('click', function() {
+    const navItems = document.querySelector('.nav-items');
+    navItems.classList.toggle('show'); // Toggle the 'show' class to display/hide items
+});
+
 function showBikeModal() {
     const bikeModal = document.getElementById("bikeModal");
     bikeModal.style.display = "block"; // Show the modal
