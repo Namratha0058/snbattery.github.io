@@ -50,6 +50,50 @@ body {
   background-color: var(--bg-clr);
   transition: background-color 1000ms;
 }
+.content-section {
+    display: none; /* Initially hide all sections */
+    padding: 20px;
+}
+
+#hero {
+    display: block; /* Show the hero section by default */
+}
+
+.navbar {
+    position: relative;
+}
+
+.nav-items {
+    flex-direction: row;
+}
+
+#search-form {
+    display: flex;
+    justify-content: flex-end; /* Align search to the right */
+}
+
+.nav-item {
+    margin-right: 20px; /* Space between items */
+}
+
+@media (max-width: 600px) {
+    .nav-items {
+        flex-direction: column; /* Stack items vertically on mobile */
+    }
+
+    .nav-item {
+        margin: 0; /* Remove margins */
+    }
+
+    #search-form {
+        margin-top: 10px;
+    }
+
+    .content-section {
+        padding: 10px; /* Adjust padding for mobile */
+    }
+}
+
 .main-content {
             padding: 20px;
         }
