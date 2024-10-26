@@ -120,6 +120,18 @@ body {
             text-align: center;
             color: #333; /* Dark text for headers */
         }
+@media (max-width: 768px) {
+    .logo {
+        margin-bottom: 0; /* Adjust or remove margin */
+        padding-bottom: 0; /* Adjust or remove padding */
+    }
+    
+    .nav-items {
+        margin-top: 0; /* Adjust or remove margin */
+        padding-top: 0; /* Adjust or remove padding */
+    }
+}
+
 /* Container for the image row */
 .image-row {
     display: flex;
