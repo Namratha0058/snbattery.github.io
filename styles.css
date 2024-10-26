@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
 
 *,
@@ -50,50 +52,6 @@ body {
   background-color: var(--bg-clr);
   transition: background-color 1000ms;
 }
-.content-section {
-    display: none; /* Initially hide all sections */
-    padding: 20px;
-}
-
-#hero {
-    display: block; /* Show the hero section by default */
-}
-
-.navbar {
-    position: relative;
-}
-
-.nav-items {
-    flex-direction: row;
-}
-
-#search-form {
-    display: flex;
-    justify-content: flex-end; /* Align search to the right */
-}
-
-.nav-item {
-    margin-right: 20px; /* Space between items */
-}
-
-@media (max-width: 600px) {
-    .nav-items {
-        flex-direction: column; /* Stack items vertically on mobile */
-    }
-
-    .nav-item {
-        margin: 0; /* Remove margins */
-    }
-
-    #search-form {
-        margin-top: 10px;
-    }
-
-    .content-section {
-        padding: 10px; /* Adjust padding for mobile */
-    }
-}
-
 .main-content {
             padding: 20px;
         }
@@ -176,62 +134,31 @@ body {
     margin-bottom: 10px; /* Space below images */
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.navbar {
-    width: 100%;
-}
-
-.nav-items {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column; /* Stack items vertically on mobile */
-}
-
-.nav-item {
-    margin: 0; /* Remove margin to avoid gaps */
-}
-
-.nav-link {
-    padding: 15px;
-    text-align: center;
-    display: block; /* Make the link fill the nav item */
-}
-
-@media (min-width: 600px) {
-    .nav-items {
-        flex-direction: row; /* Change to row on larger screens */
-    }
-
-    .nav-item {
-        margin-right: 20px; /* Add space between items */
-    }
-}
-
-#search-form {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.social-links ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-}
-
 /* Responsive styles for mobile devices */
 @media (max-width: 600px) {
     .gallery-image {
         width: 100%; /* Full width on small screens */
     }
 }
+
+/* Basic styles for navigation items */
+.nav-item {
+    margin-right: 15px; /* Adjust as needed */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .nav-item {
+        margin-bottom: 10px; /* Space between items on mobile */
+        margin-right: 0; /* Remove right margin on mobile */
+    }
+    
+    .nav-items {
+        display: flex;
+        flex-direction: column; /* Stack items vertically on mobile */
+    }
+}
+
 
 
 ul {
@@ -310,88 +237,17 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.navbar {
-    display: none; /* Initially hide the navbar */
-    position: absolute; /* Allow it to overlap */
-    top: 0; 
-    left: 0; 
-    right: 0;
-    background-color: white; /* Background color for the nav */
-    z-index: 1000; /* Ensure it overlaps other content */
-    height: 100%; /* Full height for the overlay */
-    overflow-y: auto; /* Scroll if needed */
-}
-
-.nav-toggle {
-    display: block; /* Show the toggle button */
-    background: none;
-    border: none;
-    font-size: 30px; /* Size of the icon */
-    cursor: pointer;
-}
-
-/* Show navbar when active */
-
-
-.container {
-    position: relative; /* Ensure the container can position the nav absolutely */
-    z-index: 1; /* Keep it below the nav */
-}
-
-.navbar {
-    display: none; /* Initially hide the navbar */
-    position: fixed; /* Use fixed positioning to cover the viewport */
+.overlay {
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0; /* Extend to the bottom of the viewport */
-    background-color: #333; /* Dark background color for the nav */
-    color: #fff; /* White text color */
-    z-index: 1000; /* Ensure it overlaps other content */
-    padding: 20px; /* Add some padding for the links */
-    overflow-y: auto; /* Scroll if needed */
-}
-
-.navbar.active {
-    display: block; /* Show the navbar */
-}
-
-/* Styles for nav items */
-.nav-item {
-    list-style: none; /* Remove bullet points */
-    margin: 15px 0; /* Spacing between items */
-}
-
-.nav-link {
-    text-decoration: overline; /* Maintain existing style */
-    color: #fff; /* White text color for links */
-}
-
-/* Logo styles */
-.logo {
-    color: blue; /* Color of the logo */
-    font-size: 100px; /* Logo size */
-    text-decoration: overline; /* Maintain existing style */
-}
-
-/* Add media query for mobile view */
-@media (min-width: 768px) {
-    .navbar {
-        display: flex; /* Default flex layout for larger screens */
-        position: static; /* Position it normally */
-        height: auto; /* Auto height */
-    }
-    .nav-toggle {
-        display: none; /* Hide toggle button on larger screens */
-    }
-}
-
-.nav-toggle {
-    display: block; /* Show the toggle button */
-    background: none;
-    border: none;
-    font-size: 30px; /* Size of the icon */
-    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it sits above other content */
 }
 
 .overlay-content {
@@ -655,83 +511,6 @@ button[type="submit"] {
   color: var(--text-clr);
 }
 /* ================= */
-/* General Reset */
-body, html {
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
-    height: 100%; /* Ensure full height */
-    font-family: Arial, sans-serif; /* Font for the page */
-}
-
-/* Container for the header and main content */
-.container {
-    position: relative; /* Allow positioning for absolute/fixed elements */
-    z-index: 1; /* Keep it below the navbar */
-}
-
-/* Navbar Styles */
-.navbar {
-    display: none; /* Initially hide the navbar */
-    position: fixed; /* Fix it to the viewport */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; /* Extend to the bottom of the viewport */
-    background-color: #333; /* Dark background color */
-    color: #fff; /* White text color */
-    z-index: 1000; /* Ensure it overlaps other content */
-    padding: 20px; /* Padding for navbar items */
-    overflow-y: auto; /* Allow scrolling if content is too tall */
-}
-
-/* Show navbar when active */
-.navbar.active {
-    display: block; /* Show the navbar */
-}
-
-/* Nav Item Styles */
-.nav-item {
-    list-style: none; /* Remove bullet points */
-    margin: 15px 0; /* Spacing between items */
-}
-
-.nav-link {
-    text-decoration: overline; /* Maintain existing style */
-    color: #fff; /* White text color for links */
-}
-
-/* Logo Styles */
-.logo {
-    color: blue; /* Color of the logo */
-    font-size: 100px; /* Logo size */
-    text-decoration: overline; /* Maintain existing style */
-}
-
-/* Nav Toggle Button */
-.nav-toggle {
-    display: block; /* Show the toggle button */
-    background: none; /* No background */
-    border: none; /* No border */
-    font-size: 30px; /* Size of the toggle icon */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-/* Hidden Class */
-.hidden {
-    display: none; /* Hide the content */
-}
-
-/* Media Queries for Larger Screens */
-@media (min-width: 768px) {
-    .navbar {
-        display: flex; /* Show navbar as flex on larger screens */
-        position: static; /* Reset positioning */
-        height: auto; /* Auto height */
-    }
-    .nav-toggle {
-        display: none; /* Hide toggle button on larger screens */
-    }
-}
 
 .container {
   padding: 1.8rem 3rem;
