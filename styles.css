@@ -1,5 +1,6 @@
 
 
+
 @import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
 
 *,
@@ -48,365 +49,10 @@ body {
   scroll-behavior: smooth;
   font-family: "Pompiere", cursive;
   font-size: 1.2rem;
-  color: black;
-  background-color: white;
+  color: var(--text-clr);
+  background-color: var(--bg-clr);
   transition: background-color 1000ms;
 }
-/* General Styles */
-/* General Styles */
-/* General Styles */
-body {
-    font-family: Arial, sans-serif; /* Base font */
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
-    color: #333; /* Default text color */
-}
-
-.container {
-    max-width: 1200px; /* Max width for the container */
-    margin: 0 auto; /* Center the container */
-    padding: 0 20px; /* Horizontal padding */
-}
-
-/* Contact Panel */
-.contact-panel {
-    display: flex; /* Flexbox for layout */
-    justify-content: center; /* Center buttons */
-    gap: 20px; /* Space between buttons */
-    margin: 20px 0; /* Margin around the panel */
-}
-
-.contact-button {
-    display: flex; /* Center image within button */
-    justify-content: center; /* Center image */
-    align-items: center; /* Center image */
-}
-
-.contact-logo {
-    width: 40px; /* Logo width */
-    height: auto; /* Maintain aspect ratio */
-}
-
-/* Header */
-header {
-    margin-bottom: 0; /* Remove space below header */
-}
-
-.logo {
-    color: #007bff; /* New color for the logo (blue) */
-    text-decoration: overline; /* Underline style */
-    font-size: 24px; /* Logo font size */
-}
-
-.navbar {
-    display: flex; /* Flexbox for nav */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items vertically */
-}
-
-.nav-items {
-    list-style: none; /* Remove bullet points */
-    display: flex; /* Flexbox for nav items */
-    gap: 15px; /* Space between items */
-}
-
-.nav-link {
-    text-decoration: overline; /* Underline style */
-    color: #ff4500; /* Text color for nav links (orange-red) */
-}
-
-/* Social Links */
-.social-links {
-    display: flex; /* Flexbox for social icons */
-    align-items: center; /* Center icons vertically */
-    gap: 10px; /* Space between social icons */
-}
-
-.line-divider {
-    height: 20px; /* Divider height */
-    width: 1px; /* Divider width */
-    background-color: #ccc; /* Divider color */
-    margin: 0 15px; /* Space around divider */
-}
-
-/* Quote Slideshow */
-.quote-slideshow {
-    position: relative; /* Relative positioning for slides */
-    max-width: 600px; /* Max width for slideshow */
-    margin: 20px auto; /* Center slideshow */
-}
-
-.quote-slide {
-    display: none; /* Hide slides initially */
-}
-
-.quote-slide.fade {
-    display: block; /* Show current slide */
-}
-
-/* Main Hero Section */
-.main {
-    padding: 20px;/* Padding around main */
-    text-color: black;
-}
-
-.section {
-    text-align: center; /* Center text */
-}
-
-.hook-title {
-    font-size: 1.5em; /* Title font size */
-}
-
-.hook-sub_title {
-    font-size: 2em; /* Subtitle font size */
-    margin-bottom: 20px; /* Space below subtitle */
-    text-decoration: underline; /* Underline */
-}
-
-.hero-btns-container {
-    display: flex; /* Flexbox for buttons */
-    justify-content: center; /* Center buttons */
-    gap: 10px; /* Space between buttons */
-}
-
-.button {
-    padding: 10px 20px; /* Button padding */
-    border: none; /* Remove border */
-    cursor: pointer; /* Pointer on hover */
-    background-color: #007bff; /* Button background color */
-    color: white; /* Button text color */
-}
-
-.hero-lady-img {
-    width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 500px; /* Max width for larger screens */
-    margin-top: 20px; /* Space above image */
-}
-
-/* Section Two */
-.s-two-slogan {
-    text-align: center; /* Center slogan */
-    font-size: 1.8em; /* Slogan font size */
-    margin: 40px 0; /* Margin around slogan */
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .contact-panel {
-        flex-direction: column; /* Stack buttons on mobile */
-        gap: 10px; /* Space between stacked buttons */
-    }
-
-    .navbar {
-        flex-direction: column; /* Stack navbar vertically */
-        align-items: flex-start; /* Align to start */
-    }
-
-    .nav-items {
-        display: flex; /* Display nav items in a row */
-        flex-direction: row; /* Ensure items are in a row */
-        flex-wrap: wrap; /* Allow items to wrap if necessary */
-        gap: 10px; /* Space between items */
-        width: 100%; /* Full width */
-    }
-
-    .nav-link {
-        color: #ff4500; /* Maintain new text color for nav links on mobile */
-        font-size: 18px; /* Increase font size for readability */
-    }
-
-    .hero-btns-container {
-        flex-direction: column; /* Stack buttons on mobile */
-        gap: 10px; /* Space between stacked buttons */
-    }
-
-    .hook-title, .hook-sub_title, .s-two-slogan {
-        font-size: 1.2em; /* Adjust font size for mobile */
-    }
-}
-
-/* Quote Slideshow */
-.quote-slideshow {
-    position: relative; /* Relative positioning for slides */
-    max-width: 600px; /* Max width for slideshow */
-    margin: 20px auto; /* Center slideshow */
-}
-
-.quote-slide {
-    display: none; /* Hide slides initially */
-}
-
-.quote-slide.fade {
-    display: block; /* Show current slide */
-}
-
-/* Main Hero Section */
-.main {
-    padding: 20px; /* Padding around main */
-}
-
-.section {
-    text-align: center; /* Center text */
-}
-
-.hook-title {
-    font-size: 1.5em; /* Title font size */
-}
-
-.hook-sub_title {
-    font-size: 2em; /* Subtitle font size */
-    margin-bottom: 20px; /* Space below subtitle */
-    text-decoration: underline; /* Underline */
-}
-
-.hero-btns-container {
-    display: flex; /* Flexbox for buttons */
-    justify-content: center; /* Center buttons */
-    gap: 10px; /* Space between buttons */
-}
-
-.button {
-    padding: 10px 20px; /* Button padding */
-    border: none; /* Remove border */
-    cursor: pointer; /* Pointer on hover */
-    background-color: #007bff; /* Button background color */
-    color: white; /* Button text color */
-}
-
-.hero-lady-img {
-    width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 500px; /* Max width for larger screens */
-    margin-top: 20px; /* Space above image */
-}
-
-/* Section Two */
-.s-two-slogan {
-    text-align: center; /* Center slogan */
-    font-size: 1.8em; /* Slogan font size */
-    margin: 40px 0; /* Margin around slogan */
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .contact-panel {
-        flex-direction: column; /* Stack buttons on mobile */
-        gap: 10px; /* Space between stacked buttons */
-    }
-
-    .navbar {
-        flex-direction: column; /* Stack navbar vertically */
-        align-items: flex-start; /* Align to start */
-    }
-
-    .nav-items {
-        display: flex; /* Display nav items in a row */
-        flex-direction: row; /* Ensure items are in a row */
-        flex-wrap: wrap; /* Allow items to wrap if necessary */
-        gap: 10px; /* Space between items */
-        width: 100%; /* Full width */
-    }
-
-    .nav-link {
-        color: #ff4500; /* Maintain new text color for nav links on mobile */
-        font-size: 18px; /* Increase font size for readability */
-    }
-
-    .hero-btns-container {
-        flex-direction: column; /* Stack buttons on mobile */
-        gap: 10px; /* Space between stacked buttons */
-    }
-
-    .hook-title, .hook-sub_title, .s-two-slogan {
-        font-size: 1.2em; /* Adjust font size for mobile */
-    }
-}
-
-
-/* Main Hero Section */
-.main {
-    padding: 20px; /* Padding around main */
-}
-
-.section {
-    text-align: center; /* Center text */
-}
-
-.hook-title {
-    font-size: 1.5em; /* Title font size */
-}
-
-.hook-sub_title {
-    font-size: 2em; /* Subtitle font size */
-    margin-bottom: 20px; /* Space below subtitle */
-    text-decoration: underline; /* Underline */
-}
-
-.hero-btns-container {
-    display: flex; /* Flexbox for buttons */
-    justify-content: center; /* Center buttons */
-    gap: 10px; /* Space between buttons */
-}
-
-.button {
-    padding: 10px 20px; /* Button padding */
-    border: none; /* Remove border */
-    cursor: pointer; /* Pointer on hover */
-    background-color: #007bff; /* Button background color */
-    color: white; /* Button text color */
-}
-
-.hero-lady-img {
-    width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 500px; /* Max width for larger screens */
-    margin-top: 20px; /* Space above image */
-}
-
-/* Section Two */
-.s-two-slogan {
-    text-align: center; /* Center slogan */
-    font-size: 1.8em; /* Slogan font size */
-    margin: 40px 0; /* Margin around slogan */
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .contact-panel {
-        flex-direction: column; /* Stack buttons on mobile */
-        gap: 10px; /* Space between stacked buttons */
-    }
-
-    .navbar {
-        flex-direction: column; /* Stack navbar vertically */
-        align-items: flex-start; /* Align to start */
-    }
-
-    .nav-items {
-        display: flex; /* Display nav items in a row */
-        flex-direction: row; /* Ensure items are in a row */
-        flex-wrap: wrap; /* Allow items to wrap if necessary */
-        gap: 10px; /* Space between items */
-        width: 100%; /* Full width */
-    }
-
-    .nav-link {
-        color: #007bff; /* Change text color for nav links on mobile */
-        font-size: 18px; /* Increase font size for readability */
-    }
-
-    .hero-btns-container {
-        flex-direction: column; /* Stack buttons on mobile */
-        gap: 10px; /* Space between stacked buttons */
-    }
-
-    .hook-title, .hook-sub_title, .s-two-slogan {
-        font-size: 1.2em; /* Adjust font size for mobile */
-    }
-}
-
 .main-content {
             padding: 20px;
         }
@@ -511,7 +157,36 @@ body {
 
 /* Header */
 /* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Base font */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    color: #333; /* Text color */
+}
 
+.container {
+    max-width: 1200px; /* Max width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Horizontal padding */
+}
+
+/* Contact Panel */
+.contact-panel {
+    display: flex; /* Flexbox for layout */
+    justify-content: center; /* Center buttons */
+    gap: 20px; /* Space between buttons */
+    margin: 20px 0; /* Margin around the panel */
+}
+
+.contact-button {
+    display: flex; /* Center image within button */
+    justify-content: center; /* Center image */
+    align-items: center; /* Center image */
+}
+
+.contact-logo {
+    width: 40px; /* Logo width */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Header */
@@ -519,14 +194,167 @@ header {
     margin-bottom: 20px; /* Space below header */
 }
 
+.logo {
+    color: blue; /* Logo color */
+    text-decoration: overline; /* Underline style */
+    font-size: 24px; /* Logo font size */
+}
+
+.navbar {
+    display: flex; /* Flexbox for nav */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+.nav-items {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Flexbox for nav items */
+    gap: 15px; /* Space between items */
+}
+
+.nav-link {
+    text-decoration: overline; /* Underline style */
+    color: #333; /* Default text color */
+}
+
+/* Social Links */
+.social-links {
+    display: flex; /* Flexbox for social icons */
+    align-items: center; /* Center icons vertically */
+}
+
+.line-divider {
+    height: 20px; /* Divider height */
+    width: 1px; /* Divider width */
+    background-color: #ccc; /* Divider color */
+    margin: 0 15px; /* Space around divider */
+}
+
+/* Quote Slideshow */
+.quote-slideshow {
+    position: relative; /* Relative positioning for slides */
+    max-width: 600px; /* Max width for slideshow */
+    margin: 20px auto; /* Center slideshow */
+}
+
+.quote-slide {
+    display: none; /* Hide slides initially */
+}
+
+.quote-slide.fade {
+    display: block; /* Show current slide */
+}
+
+/* Main Hero Section */
+.main {
+    padding: 20px; /* Padding around main */
+}
+
+.section {
+    text-align: center; /* Center text */
+}
+
+.hook-title {
+    font-size: 1.5em; /* Title font size */
+}
+
+.hook-sub_title {
+    font-size: 2em; /* Subtitle font size */
+    margin-bottom: 20px; /* Space below subtitle */
+    text-decoration: underline; /* Underline */
+}
+
+.hero-btns-container {
+    display: flex; /* Flexbox for buttons */
+    justify-content: center; /* Center buttons */
+    gap: 10px; /* Space between buttons */
+}
+
+.button {
+    padding: 10px 20px; /* Button padding */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer on hover */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+}
+
+.hero-lady-img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 500px; /* Max width for larger screens */
+    margin-top: 20px; /* Space above image */
+}
+
+/* Section Two */
+.s-two-slogan {
+    text-align: center; /* Center slogan */
+    font-size: 1.8em; /* Slogan font size */
+    margin: 40px 0; /* Margin around slogan */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .contact-panel {
+        flex-direction: column; /* Stack buttons on mobile */
+        gap: 10px; /* Space between stacked buttons */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack navbar vertically */
+        align-items: flex-start; /* Align to start */
+    }
+
+    .nav-items {
+        display: flex; /* Display nav items in a row */
+        flex-direction: row; /* Ensure items are in a row */
+        flex-wrap: wrap; /* Allow items to wrap if necessary */
+        gap: 10px; /* Space between items */
+        width: 100%; /* Full width */
+    }
+
+    .nav-link {
+        color: #007bff; /* Change text color for nav links on mobile */
+        font-size: 18px; /* Increase font size for readability */
+    }
+
+    .hero-btns-container {
+        flex-direction: column; /* Stack buttons on mobile */
+        gap: 10px; /* Space between stacked buttons */
+    }
+
+    .hook-title, .hook-sub_title, .s-two-slogan {
+        font-size: 1.2em; /* Adjust font size for mobile */
+    }
+}
 
 
+.line-divider {
+    height: 20px; /* Divider height */
+    width: 1px; /* Divider width */
+    background-color: #ccc; /* Divider color */
+    margin: 0 15px; /* Space around divider */
+}
 
+/* Theme Toggler */
+.theme-togglers {
+    display: flex; /* Flexbox for togglers */
+    gap: 10px; /* Space between togglers */
+}
 
+/* Quote Slideshow */
+.quote-slideshow {
+    position: relative; /* Relative positioning for slides */
+    max-width: 600px; /* Max width for slideshow */
+    margin: 20px auto; /* Center slideshow */
+}
 
+.quote-slide {
+    display: none; /* Hide slides initially */
+}
 
-
-
+.quote-slide.fade {
+    display: block; /* Show current slide */
+}
 
 /* Main Hero Section */
 .main {
