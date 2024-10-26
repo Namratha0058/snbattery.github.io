@@ -119,55 +119,6 @@ body {
             color: #333; /* Dark text for headers */
         }
 /* Container for the image row */
-.modal-bike {
-    display: none; /* Hidden by default */
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-}
-
-.modal-content-bike {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-}
-
-.close-bike {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-bike:hover,
-.close-bike:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.order-button-bike {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: green;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.battery-option-bike {
-    margin-bottom: 20px;
-}
-
 .image-row {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping to the next line */
@@ -265,17 +216,107 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.overlay {
-    position: fixed;
+.navbar {
+    display: none; /* Initially hide the navbar */
+    position: absolute; /* Allow it to overlap */
+    top: 0; 
+    left: 0; 
+    right: 0;
+    background-color: white; /* Background color for the nav */
+    z-index: 1000; /* Ensure it overlaps other content */
+    height: 100%; /* Full height for the overlay */
+    overflow-y: auto; /* Scroll if needed */
+}
+
+.nav-toggle {
+    display: block; /* Show the toggle button */
+    background: none;
+    border: none;
+    font-size: 30px; /* Size of the icon */
+    cursor: pointer;
+}
+
+/* Show navbar when active */
+.navbar.active {
+    display: block; /* Show the navbar */
+}
+
+/* Add media query for mobile view */
+@media (min-width: 768px) {
+    .navbar {
+        display: flex; /* Default flex layout for larger screens */
+        position: static; /* Position it normally */
+        height: auto; /* Auto height */
+    }
+    .nav-toggle {
+        display: none; /* Hide toggle button on larger screens */
+    }
+}
+body, html {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    height: 100%; /* Ensure full height */
+}
+
+.container {
+    position: relative; /* Ensure the container can position the nav absolutely */
+    z-index: 1; /* Keep it below the nav */
+}
+
+.navbar {
+    display: none; /* Initially hide the navbar */
+    position: fixed; /* Use fixed positioning to cover the viewport */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999; /* Ensure it sits above other content */
+    right: 0;
+    bottom: 0; /* Extend to the bottom of the viewport */
+    background-color: #333; /* Dark background color for the nav */
+    color: #fff; /* White text color */
+    z-index: 1000; /* Ensure it overlaps other content */
+    padding: 20px; /* Add some padding for the links */
+    overflow-y: auto; /* Scroll if needed */
+}
+
+.navbar.active {
+    display: block; /* Show the navbar */
+}
+
+/* Styles for nav items */
+.nav-item {
+    list-style: none; /* Remove bullet points */
+    margin: 15px 0; /* Spacing between items */
+}
+
+.nav-link {
+    text-decoration: overline; /* Maintain existing style */
+    color: #fff; /* White text color for links */
+}
+
+/* Logo styles */
+.logo {
+    color: blue; /* Color of the logo */
+    font-size: 100px; /* Logo size */
+    text-decoration: overline; /* Maintain existing style */
+}
+
+/* Add media query for mobile view */
+@media (min-width: 768px) {
+    .navbar {
+        display: flex; /* Default flex layout for larger screens */
+        position: static; /* Position it normally */
+        height: auto; /* Auto height */
+    }
+    .nav-toggle {
+        display: none; /* Hide toggle button on larger screens */
+    }
+}
+
+.nav-toggle {
+    display: block; /* Show the toggle button */
+    background: none;
+    border: none;
+    font-size: 30px; /* Size of the icon */
+    cursor: pointer;
 }
 
 .overlay-content {
