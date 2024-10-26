@@ -120,18 +120,19 @@ body {
             text-align: center;
             color: #333; /* Dark text for headers */
         }
+
+
 header {
     padding: 0; /* Remove any padding from header */
 }
 
 .logo {
     margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
 }
 
 .navbar {
-    margin: 0; /* Remove margin from navbar */
-    padding: 0; /* Remove padding from navbar */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
 }
 
 .nav-items {
@@ -139,16 +140,22 @@ header {
     padding: 0; /* Remove padding */
 }
 
-/* Ensure this applies only on mobile devices */
+/* For mobile */
 @media (max-width: 768px) {
     .logo {
-        margin-bottom: 0; /* Adjust or remove margin */
+        margin-bottom: 0; /* Ensure there's no space below the logo */
     }
-    
+
     .nav-items {
-        margin-top: 0; /* Remove any space above */
+        display: none; /* Hide nav items initially */
+        margin-top: 0; /* Remove space if needed */
+    }
+
+    .nav-items.show {
+        display: block; /* Show nav items when active */
     }
 }
+
 
 /* Container for the image row */
 .image-row {
