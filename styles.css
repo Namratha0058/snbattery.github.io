@@ -146,7 +146,8 @@ header {
 
 /* Main Hero Section */
 .main {
-    padding: 20px; /* Padding around main */
+    padding: 20px;/* Padding around main */
+    text-color: black;
 }
 
 .section {
