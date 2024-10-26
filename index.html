@@ -514,6 +514,19 @@
 </main>
 
 <script>
+function searchFunction(event) {
+    event.preventDefault();
+    // Add search functionality here
+}
+
+document.querySelectorAll('.nav-link').forEach(item => {
+    item.addEventListener('click', event => {
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
 
 
 function showBikeModal() {
