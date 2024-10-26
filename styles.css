@@ -580,6 +580,83 @@ button[type="submit"] {
   color: var(--text-clr);
 }
 /* ================= */
+/* General Reset */
+body, html {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    height: 100%; /* Ensure full height */
+    font-family: Arial, sans-serif; /* Font for the page */
+}
+
+/* Container for the header and main content */
+.container {
+    position: relative; /* Allow positioning for absolute/fixed elements */
+    z-index: 1; /* Keep it below the navbar */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: none; /* Initially hide the navbar */
+    position: fixed; /* Fix it to the viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Extend to the bottom of the viewport */
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+    z-index: 1000; /* Ensure it overlaps other content */
+    padding: 20px; /* Padding for navbar items */
+    overflow-y: auto; /* Allow scrolling if content is too tall */
+}
+
+/* Show navbar when active */
+.navbar.active {
+    display: block; /* Show the navbar */
+}
+
+/* Nav Item Styles */
+.nav-item {
+    list-style: none; /* Remove bullet points */
+    margin: 15px 0; /* Spacing between items */
+}
+
+.nav-link {
+    text-decoration: overline; /* Maintain existing style */
+    color: #fff; /* White text color for links */
+}
+
+/* Logo Styles */
+.logo {
+    color: blue; /* Color of the logo */
+    font-size: 100px; /* Logo size */
+    text-decoration: overline; /* Maintain existing style */
+}
+
+/* Nav Toggle Button */
+.nav-toggle {
+    display: block; /* Show the toggle button */
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 30px; /* Size of the toggle icon */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hidden Class */
+.hidden {
+    display: none; /* Hide the content */
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+    .navbar {
+        display: flex; /* Show navbar as flex on larger screens */
+        position: static; /* Reset positioning */
+        height: auto; /* Auto height */
+    }
+    .nav-toggle {
+        display: none; /* Hide toggle button on larger screens */
+    }
+}
 
 .container {
   padding: 1.8rem 3rem;
