@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,13 +10,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="styles.css">
 	   <style>
+	
+    }
         body {
             font-family: Arial, sans-serif;
-	   
-       }
-		   /* General Reset */
-/* General Reset */
-
+        }
 
         .button-group {
             display: flex;
@@ -202,7 +201,7 @@
     </a>
 </div>
       <header class="container">
-        <a href="#hero" class="logo clr-transition" style="color: black; text-decoration: overline;"> S N BATTERY SALES AND SERVICES</a><br><br>
+        <a href="#hero" class="logo clr-transition" style="text-color:blue;text-size:100PX;text-decoration:overline;"> S N BATTERY SALES AND SERVICES</a><br><br><br><br>
         <nav class="navbar">
           <ul class="nav-items">
             <li class="nav-item"><a href="#hero" class="nav-link clr-transition"style="text-decoration:overline;">Home</a></li>
@@ -211,11 +210,18 @@
           <li class="nav-item"><a href="#FAQ's" class="nav-link clr-transition"style="text-decoration:overline;">FAQ's</a></li>
 		 
 		  <li class="nav-item"><a href="#contact" class="nav-link clr-transition"style="text-decoration:overline;">Contact</a></li>
-		  
+		    <form id="search-form" onsubmit="return searchFunction(event);">
+            <input type="text" id="search-input" placeholder="Search..." required>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
           </ul>
-		 
-		<div class="social-links">
-           
+		  
+          <div class="social-links">
+            <ul>
+              <li><i class='bx bxl-instagram nav-icon clr-transition'></i></li>
+              <li><i class='bx bxl-twitter nav-icon clr-transition'></i></li>
+              <li><i class='bx bxl-facebook nav-icon clr-transition'></i></li>
+            </ul>
             <span class="line-divider clr-transition"></span>
             <div class="theme-togglers">
               <i class='bx bxs-sun theme-toggler clr-transition'></i>
@@ -224,9 +230,9 @@
           </div>
         </nav>
 
-         
-
-        
+        <div class="menu-togglers">
+          <i class="bx bx-menu menu-toggle clr-transition"></i>
+        </div>
       </header>
 	   <div class="quote-slideshow">
             <div class="quote-slide fade">"A battery is the heart of your car. Keep it healthy!"</div>
@@ -236,8 +242,8 @@
       <main id="hero" class="main">
         <section class="section section-one">
          <br>
-            <h6 class="hook-title clr-transition" style="color: black;">"Power your life with our batteries"</h6>
-            <h2 class="hook-sub_title clr-transition" style="text-decoration:underline;color: black;">"We charge your world.</h2>
+            <h6 class="hook-title clr-transition">"Power your life with our batteries"</h6>
+            <h2 class="hook-sub_title clr-transition" style="text-decoration:underline;">"We charge your world.</h2>
             <div class="hero-btns-container">
 <a href="tel:9902555479">
               <button class="button btn-hero btn-primary buy-hero-btn"><i class="bx bx-cart in-btn-icon"></i>CALL</button>
@@ -510,11 +516,6 @@
 </main>
 
 <script>
-	document.getElementById('nav-toggle').addEventListener('click', function() {
-    const navItems = document.querySelector('.nav-items');
-    navItems.classList.toggle('show'); // Toggle the 'show' class to display/hide items
-});
-
 function showBikeModal() {
     const bikeModal = document.getElementById("bikeModal");
     bikeModal.style.display = "block"; // Show the modal
@@ -601,7 +602,7 @@ function showModal(type) {
         "ICML": ["ICML Delite diesel", "ICML Rhino diesel", "ICML winner diesel", "ICML xcitor diesel", "ICML xcitor diesel"],
         "Force motors": ["Force Motors Minidor", "Force Motors Balwan-330-25Hp", "Force Motors Balwan-400-35Hp", "Force Motors orchard", "Force Motors Balwan-550-52Hp", "Force Motors Balwan-400-35Hp", "Force Motors Balwan-450-40Hp", "Force Motors OX 25", "Force Motors TRAVELLER DIESEL"],
         "BENTLEY": ["Bentley flying spur petrol", "Bentley continental petrol", "Bentley Bentayga petrol", "Bentley mulsanne petrol"],
-		"Chevrolet": ["Chevrolet Opel Vectra diesel", "Chevrolet opel vectra petrol"  , "Chevrolet enjoy diesel", "Chevrolet forester petrol", "Chevrolet opel corse 1.6 petrol", "Chevrolet opel vectra petrol", "Chevrolet corsa petrol", "Chevrolet opel swing petrol", "Chevrolet optra 1.8 petrol", "Chevrolet optra platnium petrol", "Chevrolet optra royal 1.6 petrol", "Chevrolet SRV petrol", "Chevrolet SRV petrol", "Chevrolet starlite diesel", "Chevrolet 1.4 petrol", "Chevrolet opel 1.6 petrol", "Chevrolet enjoy petrol", "Chevrolet optra 1.6 petrol", "Chevrolet Beat petrol", "Chevrolet optra magnum diesel", "Chevrolet Beat diesel"],                                                
+		"Chevrolet": ["Chevrolet Opel Vectra diesel", "Chevrolet opel vectra petrol"  , "Chevrolet enjoy diesel", "Chevrolet forester petrol", "Chevrolet cruze diesel", "Chevrolet opel captiva diesel", "Chevrolet spark petrol", "Chevrolet sail diesel", "Chevrolet sail petrol", "Chevrolet optra platnium petrol", "Chevrolet optra royal 1.6 petrol", "Chevrolet tavera petrol", "Chevrolet enjoy petrol", "Chevrolet starlite diesel", "Chevrolet 1.4 petrol", "Chevrolet opel 1.6 petrol", "Chevrolet enjoy petrol", "Chevrolet optra 1.6 petrol", "Chevrolet Beat petrol", "Chevrolet optra magnum diesel", "Chevrolet Beat diesel"],                                                
         "Nissan": ["Nissan Evalia diesel", "Nissan Micra 1.5L diesel", "Nissan Micra 1.2L petrol", "Nissan sunny 1.5L diesel", "Nissan sunny 1.5L petrol", "Nissan Micra 1.5L XV automatic petrol", "Nissan Magnite petrol", "Nissan Teana 250XL Petrol", "Nissan Terrano diesel", "Nissan Terrano petrol", "Nissan X trail diesel", "Nissan datsun go petrol", "Nissan evalia diesel", "Nissan Micra petrol"],
         "Volkswagen": ["Volkswagen Beetle 2.0L petrol", "Volkswagen jetta diesel new", "Volkswagen jetta diesel old", "Volkswagen passat diesel", "Volkswagen passat petrol", "Volkswagen phaeton 3.6 v6", "Volkswagen polo 1.2 diesel", "Volkswagen polo 1.2 petrol", "Volkswagen polo 1.6 petrol", "Volkswagen vento 1.6 diesel", "Volkswagen vento 1.6 petrol", "Volkswagen vento old", "Volkswagen passat hybrid", "Volkswagen vento 1.2 diesel", "Volkswagen vento 1.2 petrol", "Volkswagen polo 1.5 diesel", "Volkswagen tiguan 2.0 diesel"],
         "Toyota": ["Toyota Corolla petrol", "Toyota camry petrol", "Toyota corolla altis diesel", "Toyota corolla altis petrol", "Toyota etios diesel", "Toyota etios liva petrol", "Toyota etios petrol", "Toyota fortuner D4 diesel", "Toyota innova diesel ", "Toyota innova petrol", "Toyota qualis diesel", "Toyota qualis petrol", "Toyota lexus diesel", "Toyota innova crysta diesel", "Toyota land cruiser prado 4.5 diesel", "Toyota land cruiser petrol", "Toyota new innova special edition diesel"] 
@@ -3932,108 +3933,108 @@ function showModal(type) {
         ],
 	      "Bentley flying spur petrol": [
             {
-              modelName: "Exide Xpress XP1000 (100AH)",
-                image: "31.jpg",
+              modelName: "Exide Matrix Red MTREDDIN100",
+                image: "41.jpg",
                 description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours.",
-                price: "With Old Battery exchange(Same Ah): Rs:7500.<br>Without Old Battery: Rs:10000<br>Warranty: 42 Months (24 Months Free of Cost + 18 Months Pro Rata )",
+                price: "With Old Battery exchange(Same Ah): Rs:15300.<br>Without Old Battery: Rs:17800<br>Warranty: 72 Months (36 Months Full Replacement + 36 Months Pro Rata)",
                 features: "Reliable and durable.\nOffers high performance under various conditions.\nDesigned for longevity and efficiency.",
                 recommended: "Best suited for urban and highway driving.",
             },
             {
-                modelName: "AMARON BL1000 (100AH)",
-                image: "32.jpg",
+                modelName: "Amaron PRO DIN100",
+                image: "42.jpg",
                 description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours",
-                price: "With Old Battery exchange(Same Ah): Rs:5700..<br>Without Old Battery: Rs:8000 <br>Warranty: 24 Months Free Replacement",
+                price: "With Old Battery exchange(Same Ah): Rs:14800..<br>Without Old Battery: Rs:17500 <br>Warranty: 72 Months (36 Months Full Replacement + 36 Months Pro Rata)",
                 features: "High performance with fast recharge.\nResistant to extreme temperatures",
                 recommended: "Ideal for city driving and daily commutes.",
             }
         ],
 	      "Bentley continental petrol": [
             {
-              modelName: "Exide Xpress XP1000 (100AH)",
-                image: "31.jpg",
+             modelName: "Exide Matrix Red MTREDDIN100",
+                image: "41.jpg",
                 description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours.",
-                price: "With Old Battery exchange(Same Ah): Rs:7500.<br>Without Old Battery: Rs:10000<br>Warranty: 42 Months (24 Months Free of Cost + 18 Months Pro Rata )",
+                price: "With Old Battery exchange(Same Ah): Rs:15300.<br>Without Old Battery: Rs:17800<br>Warranty: 72 Months (36 Months Full Replacement + 36 Months Pro Rata)",
                 features: "Reliable and durable.\nOffers high performance under various conditions.\nDesigned for longevity and efficiency.",
                 recommended: "Best suited for urban and highway driving.",
             },
             {
-                modelName: "AMARON BL1000 (100AH)",
-                image: "32.jpg",
+                modelName: "Amaron PRO DIN100",
+                image: "42.jpg",
                 description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours",
-                price: "With Old Battery exchange(Same Ah): Rs:5700..<br>Without Old Battery: Rs:8000 <br>Warranty: 24 Months Free Replacement",
+                price: "With Old Battery exchange(Same Ah): Rs:14800..<br>Without Old Battery: Rs:17500 <br>Warranty: 72 Months (36 Months Full Replacement + 36 Months Pro Rata)",
                 features: "High performance with fast recharge.\nResistant to extreme temperatures",
                 recommended: "Ideal for city driving and daily commutes.",
             }
         ],
 	      "Bentley Bentayga petrol": [
             {
-              modelName: "Exide Xpress XP1000 (100AH)",
-                image: "31.jpg",
+             modelName: "Exide Matrix Red MTREDDIN100",
+                image: "41.jpg",
                 description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours.",
-                price: "With Old Battery exchange(Same Ah): Rs:7500.<br>Without Old Battery: Rs:10000<br>Warranty: 42 Months (24 Months Free of Cost + 18 Months Pro Rata )",
+                price: "With Old Battery exchange(Same Ah): Rs:15300.<br>Without Old Battery: Rs:17800<br>Warranty: 72 Months (36 Months Full Replacement + 36 Months Pro Rata)",
                 features: "Reliable and durable.\nOffers high performance under various conditions.\nDesigned for longevity and efficiency.",
                 recommended: "Best suited for urban and highway driving.",
             },
             {
-                modelName: "AMARON BL1000 (100AH)",
-                image: "32.jpg",
+                modelName: "Amaron PRO DIN100",
+                image: "42.jpg",
                 description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours",
-                price: "With Old Battery exchange(Same Ah): Rs:5700..<br>Without Old Battery: Rs:8000 <br>Warranty: 24 Months Free Replacement",
+                price: "With Old Battery exchange(Same Ah): Rs:14800..<br>Without Old Battery: Rs:17500 <br>Warranty: 72 Months (36 Months Full Replacement + 36 Months Pro Rata)",
                 features: "High performance with fast recharge.\nResistant to extreme temperatures",
                 recommended: "Ideal for city driving and daily commutes.",
             }
         ],
 	      "Bentley mulsanne petrol": [
             {
-              modelName: "Exide Xpress XP1000 (100AH)",
-                image: "31.jpg",
+              modelName: "Exide Matrix Red MTREDDIN100",
+                image: "41.jpg",
                 description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours.",
-                price: "With Old Battery exchange(Same Ah): Rs:7500.<br>Without Old Battery: Rs:10000<br>Warranty: 42 Months (24 Months Free of Cost + 18 Months Pro Rata )",
+                price: "With Old Battery exchange(Same Ah): Rs:15300.<br>Without Old Battery: Rs:17800<br>Warranty: 72 Months (36 Months Full Replacement + 36 Months Pro Rata)",
                 features: "Reliable and durable.\nOffers high performance under various conditions.\nDesigned for longevity and efficiency.",
                 recommended: "Best suited for urban and highway driving.",
             },
             {
-                modelName: "AMARON BL1000 (100AH)",
-                image: "32.jpg",
+                modelName: "Amaron PRO DIN100",
+                image: "42.jpg",
                 description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours",
-                price: "With Old Battery exchange(Same Ah): Rs:5700..<br>Without Old Battery: Rs:8000 <br>Warranty: 24 Months Free Replacement",
+                price: "With Old Battery exchange(Same Ah): Rs:14800..<br>Without Old Battery: Rs:17500 <br>Warranty: 72 Months (36 Months Full Replacement + 36 Months Pro Rata)",
                 features: "High performance with fast recharge.\nResistant to extreme temperatures",
                 recommended: "Ideal for city driving and daily commutes.",
             }
         ],
 	      "Chevrolet Opel Vectra diesel": [
             {
-              modelName: "Exide Xpress XP1000 (100AH)",
-                image: "31.jpg",
-                description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours.",
-                price: "With Old Battery exchange(Same Ah): Rs:7500.<br>Without Old Battery: Rs:10000<br>Warranty: 42 Months (24 Months Free of Cost + 18 Months Pro Rata )",
+             modelName: "EXIDE MILEAGE MLDIN60 (60AH)",
+                image: "n.jpg",
+                description: "Car battery replacement in Bangalore. Express Delivery And installation in 1-2 hours.",
+                price: "With Old Battery exchange(Same Ah): Rs.6199.<br>Without Old Battery: Rs.8500 <br> Warranty: 60 Months (30 Months Full Replacement + 30 Months Pro Rata)",
                 features: "Reliable and durable.\nOffers high performance under various conditions.\nDesigned for longevity and efficiency.",
-                recommended: "Best suited for urban and highway driving.",
+                recommended: "Best suited for urban and highway driving",
             },
             {
-                modelName: "AMARON BL1000 (100AH)",
-                image: "32.jpg",
+                modelName: "Amaron FLO DIN66 (60AH) 566112060",
+                image: "5.jpg",
                 description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours",
-                price: "With Old Battery exchange(Same Ah): Rs:5700..<br>Without Old Battery: Rs:8000 <br>Warranty: 24 Months Free Replacement",
+                price: "With Old Battery exchange(Same Ah): Rs:5799..<br>Without Old Battery: Rs.8199 <br>Warranty: 60 Months (30 Months Full Replacement + 30 Months Pro Rata)",
                 features: "High performance with fast recharge.\nResistant to extreme temperatures",
                 recommended: "Ideal for city driving and daily commutes.",
             }
         ],
 	      "Chevrolet opel vectra petrol": [
             {
-              modelName: "Exide Xpress XP1000 (100AH)",
-                image: "31.jpg",
-                description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours.",
-                price: "With Old Battery exchange(Same Ah): Rs:7500.<br>Without Old Battery: Rs:10000<br>Warranty: 42 Months (24 Months Free of Cost + 18 Months Pro Rata )",
+              modelName: "EXIDE MILEAGE MLDIN60 (60AH)",
+                image: "n.jpg",
+                description: "Car battery replacement in Bangalore. Express Delivery And installation in 1-2 hours.",
+                price: "With Old Battery exchange(Same Ah): Rs.6199.<br>Without Old Battery: Rs.8500 <br> Warranty: 60 Months (30 Months Full Replacement + 30 Months Pro Rata)",
                 features: "Reliable and durable.\nOffers high performance under various conditions.\nDesigned for longevity and efficiency.",
-                recommended: "Best suited for urban and highway driving.",
+                recommended: "Best suited for urban and highway driving",
             },
             {
-                modelName: "AMARON BL1000 (100AH)",
-                image: "32.jpg",
+                modelName: "Amaron FLO DIN66 (60AH) 566112060",
+                image: "5.jpg",
                 description: "Car battery replacement in Bangalore. Express Delivery. And installation in 1-2 hours",
-                price: "With Old Battery exchange(Same Ah): Rs:5700..<br>Without Old Battery: Rs:8000 <br>Warranty: 24 Months Free Replacement",
+                price: "With Old Battery exchange(Same Ah): Rs:5799..<br>Without Old Battery: Rs.8199 <br>Warranty: 60 Months (30 Months Full Replacement + 30 Months Pro Rata)",
                 features: "High performance with fast recharge.\nResistant to extreme temperatures",
                 recommended: "Ideal for city driving and daily commutes.",
             }
@@ -4074,7 +4075,7 @@ function showModal(type) {
                 recommended: "Ideal for city driving and daily commutes.",
             }
         ],
-	      "Chevrolet opel corse 1.6 petrol": [
+	      "Chevrolet cruze diesel": [
             {
               modelName: "Exide Xpress XP1000 (100AH)",
                 image: "31.jpg",
@@ -4092,7 +4093,7 @@ function showModal(type) {
                 recommended: "Ideal for city driving and daily commutes.",
             }
         ],
-	      "Chevrolet opel vectra petrol": [
+	      "Chevrolet captiva diesel": [
             {
               modelName: "Exide Xpress XP1000 (100AH)",
                 image: "31.jpg",
@@ -4110,7 +4111,7 @@ function showModal(type) {
                 recommended: "Ideal for city driving and daily commutes.",
             }
         ],
-	      "Chevrolet corsa petrol": [
+	      "Chevrolet spark petrol": [
             {
               modelName: "Exide Xpress XP1000 (100AH)",
                 image: "31.jpg",
@@ -4164,7 +4165,7 @@ function showModal(type) {
                 recommended: "Ideal for city driving and daily commutes.",
             }
         ],
-	     "Chevrolet optra platnium petrol": [
+	     "Chevrolet sail diesel": [
             {
               modelName: "Exide Xpress XP1000 (100AH)",
                 image: "31.jpg",
@@ -4218,7 +4219,7 @@ function showModal(type) {
                 recommended: "Ideal for city driving and daily commutes.",
             }
         ],
-	      "Chevrolet SRV petrol": [
+	      "Chevrolet tavera diesel": [
             {
               modelName: "Exide Xpress XP1000 (100AH)",
                 image: "31.jpg",
@@ -4308,7 +4309,7 @@ function showModal(type) {
                 recommended: "Ideal for city driving and daily commutes.",
             }
         ],
-	      "Chevrolet optra 1.6 petrol": [
+	      "Chevrolet sail petrol": [
             {
               modelName: "Exide Xpress XP1000 (100AH)",
                 image: "31.jpg",
