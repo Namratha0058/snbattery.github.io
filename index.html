@@ -11,8 +11,140 @@
 	   <style>
         body {
             font-family: Arial, sans-serif;
-	    color: black; /* Change text color for all text in the body */
+	   
        }
+		   /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Set a default font */
+  background-color: white; /* Background color */
+  color: black; /* Default text color */
+}
+
+/* Header Styling */
+.header {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  width: 100%; /* Ensure header takes full width */
+}
+
+.logo {
+  color: red; /* Set logo color */
+  text-decoration: overline; /* Underline text */
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove any padding */
+  white-space: nowrap; /* Prevent text from wrapping */
+  flex: 1; /* Allow logo to take available space */
+  font-size: 18px; /* Adjust font size as needed */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex; /* Align items in a row */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-left: auto; /* Push nav items to the right */
+  width: auto; /* Adjust width for better alignment */
+}
+
+.nav-items {
+  display: flex; /* Align nav items in a row */
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  justify-content: flex-start; /* Align items to the left */
+  width: 100%; /* Ensure nav items take full width */
+}
+
+.nav-item {
+  margin-right: 20px; /* Space between nav items */
+}
+
+.nav-link {
+  text-decoration: none; /* Remove underline from links */
+  color: red; /* Set text color */
+  font-size: 14px; /* Smaller font size */
+  font-weight: bold; /* Make text bold */
+  padding: 8px 12px; /* Adjust padding for better click area */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 0, 0, 0.2); /* Darker background on hover */
+  color: white; /* Change text color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Image Styling */
+.hero-lady-img {
+  max-width: 100%; /* Ensure image is responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Quote Slideshow Styling */
+.quote-slideshow {
+  display: flex; /* Display quotes in a slideshow */
+  overflow: hidden; /* Hide overflow */
+}
+
+.quote-slide {
+  display: none; /* Hide slides by default */
+}
+
+.fade {
+  animation: fade 1s; /* Fade animation for slides */
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row; /* Ensure items are in a row */
+    justify-content: flex-start; /* Align items to the left */
+  }
+
+  .logo {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
+
+  .navbar {
+    width: 100%; /* Ensure navbar takes full width */
+  }
+
+  .nav-items {
+    flex-direction: column; /* Stack nav items vertically */
+    width: 100%; /* Ensure nav items take full width */
+    margin-top: 10px; /* Space above nav items */
+  }
+
+  .nav-item {
+    margin-right: 0; /* Remove margin on mobile */
+    margin-bottom: 10px; /* Space between nav items */
+  }
+
+  .nav-link {
+    font-size: 12px; /* Even smaller font size for mobile */
+  }
+
+  /* Image display adjustments for mobile */
+  .hero-lady-img {
+    display: block; /* Ensure the image is visible */
+    max-width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
 
         .button-group {
             display: flex;
