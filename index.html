@@ -14,6 +14,7 @@
 	   
        }
 		   /* General Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -48,7 +49,7 @@ body {
 /* Navbar Styling */
 .navbar {
   display: flex; /* Align items in a row */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: nowrap; /* Prevent wrapping */
   margin-left: auto; /* Push nav items to the right */
   width: auto; /* Adjust width for better alignment */
 }
@@ -59,7 +60,7 @@ body {
   padding: 0; /* Remove default padding */
   margin: 0; /* Remove default margin */
   justify-content: flex-start; /* Align items to the left */
-  width: 100%; /* Ensure nav items take full width */
+  width: auto; /* Allow for content width */
 }
 
 .nav-item {
@@ -81,6 +82,77 @@ body {
   color: white; /* Change text color on hover */
   transform: scale(1.1); /* Slightly enlarge on hover */
 }
+
+/* Image Styling */
+.hero-lady-img {
+  max-width: 100%; /* Ensure image is responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Quote Slideshow Styling */
+.quote-slideshow {
+  display: flex; /* Display quotes in a slideshow */
+  overflow: hidden; /* Hide overflow */
+}
+
+.quote-slide {
+  display: none; /* Hide slides by default */
+}
+
+.fade {
+  animation: fade 1s; /* Fade animation for slides */
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row; /* Ensure items are in a row */
+    justify-content: flex-start; /* Align items to the left */
+  }
+
+  .logo {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
+
+  .navbar {
+    width: 100%; /* Ensure navbar takes full width */
+  }
+
+  .nav-items {
+    flex-wrap: nowrap; /* Prevent wrapping on mobile */
+    width: 100%; /* Allow for full width */
+    justify-content: flex-start; /* Align to left */
+  }
+
+  .nav-item {
+    margin-right: 15px; /* Adjust margin for mobile */
+  }
+
+  .nav-link {
+    font-size: 12px; /* Even smaller font size for mobile */
+  }
+
+  /* Change text size for the hook title */
+  .hook-title {
+    font-size: 16px; /* Adjust font size for mobile */
+  }
+
+  /* Image display adjustments for mobile */
+  .hero-lady-img {
+    display: block; /* Ensure the image is visible */
+    max-width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+
+
+
 
 /* Image Styling */
 .hero-lady-img {
