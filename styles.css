@@ -49,8 +49,8 @@ body {
   scroll-behavior: smooth;
   font-family: "Pompiere", cursive;
   font-size: 1.2rem;
-  color: var(--text-clr);
-  background-color: var(--bg-clr);
+  color: black;
+  background-color: white;
   transition: background-color 1000ms;
 }
 .main-content {
