@@ -29,13 +29,25 @@
 }
 
 /* Styles for nav items */
+/* General styles for the navbar */
+.navbar {
+    display: flex;
+    flex-direction: row; /* Keep items in a row */
+    justify-content: space-between; /* Space out items evenly */
+    align-items: center; /* Centers items vertically */
+    padding: 10px; /* Add some padding */
+    background-color: #fff; /* Background color of navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+/* Styles for nav items */
 .nav-items {
     list-style: none; /* Removes bullet points */
     display: flex; /* Displays items in a row */
     padding: 0; /* Removes padding */
     margin: 0; /* Removes margin */
     flex-wrap: nowrap; /* Prevent wrapping */
-    width: 100%; /* Full width */
 }
 
 .nav-item {
@@ -58,49 +70,11 @@
     color: #fff; /* Change text color on hover */
 }
 
-/* Active link styling */
-.nav-link.active {
-    background-color: #0056b3; /* Different background for active link */
-    color: #fff; /* Text color for active link */
-}
-
-/* Styles for search form */
-#search-form {
-    display: flex; /* Displays input and button in a row */
-    margin-left: 20px; /* Space between nav items and search form */
-}
-
-#search-input {
-    padding: 5px; /* Padding inside the search input */
-    border: 1px solid #ccc; /* Border style */
-    border-radius: 5px; /* Rounded corners */
-    transition: border-color 0.3s; /* Smooth transition */
-}
-
-#search-input:focus {
-    border-color: #007bff; /* Change border color on focus */
-}
-
-/* Styles for button */
-button {
-    background-color: #007bff; /* Button background */
-    color: white; /* Button text color */
-    border: none; /* Removes border */
-    padding: 8px 12px; /* Padding for button */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-    transition: background-color 0.3s; /* Smooth transition */
-}
-
-button:hover {
-    background-color: #0056b3; /* Darken button on hover */
-}
-
 /* Styles for social links */
 .social-links {
     display: flex; /* Displays social links in a row */
     align-items: center; /* Center items vertically */
-    margin-left: 20px; /* Space between search and social links */
+    margin-left: 20px; /* Space between social links and nav items */
 }
 
 .social-links i {
@@ -118,16 +92,12 @@ button:hover {
 /* Mobile styles */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: row; /* Keep items in a row */
-        justify-content: space-between; /* Space out items evenly */
-        padding: 10px; /* Adjust padding for mobile */
+        padding: 5px; /* Adjust padding for mobile */
     }
 
     .nav-items {
-        flex-direction: row; /* Keep nav items in a row */
-        flex-wrap: nowrap; /* Prevent wrapping */
         width: 100%; /* Full width */
-        justify-content: space-around; /* Space out items evenly */
+        justify-content: space-between; /* Space out items evenly */
     }
 
     .nav-item {
@@ -141,11 +111,19 @@ button:hover {
         text-align: center; /* Center text in nav links */
     }
 
+    /* Ensure social links fit within the navbar */
+    .social-links {
+        margin-left: 10px; /* Adjust space between nav items and social links */
+        flex-wrap: nowrap; /* Prevent wrapping of social icons */
+        margin-top: 5px; /* Space above social links */
+    }
+
     /* Hide search form on mobile */
     #search-form {
         display: none; /* Hide search form */
     }
 }
+
 
 
         .button-group {
