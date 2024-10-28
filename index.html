@@ -12,6 +12,95 @@
         body {
             font-family: Arial, sans-serif;
         }
+		   /* General styles for the navbar */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    align-items: center; /* Centers items vertically */
+    padding: 10px; /* Add some padding */
+    background-color: #fff; /* Background color of navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+/* Styles for nav items */
+.nav-items {
+    list-style: none; /* Removes bullet points */
+    display: flex; /* Displays items in a row */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+}
+
+.nav-item {
+    margin-left: 20px; /* Space between nav items */
+}
+
+.nav-link {
+    text-decoration: none; /* Removes underline from links */
+    color: #333; /* Text color */
+}
+
+/* Styles for search form */
+#search-form {
+    display: flex; /* Displays input and button in a row */
+    margin-left: 20px; /* Space between nav items and search form */
+}
+
+#search-input {
+    padding: 5px; /* Padding inside the search input */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+}
+
+button {
+    background-color: transparent; /* Transparent background */
+    border: none; /* Removes border */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Styles for social links and theme togglers */
+.social-links {
+    display: flex; /* Displays social links in a row */
+    align-items: center; /* Center items vertically */
+    margin-left: 20px; /* Space between search and social links */
+}
+
+.line-divider {
+    height: 30px; /* Height of the line */
+    width: 1px; /* Width of the line */
+    background-color: #ccc; /* Color of the line */
+    margin: 0 10px; /* Spacing around the line */
+}
+
+.theme-togglers {
+    display: flex; /* Displays theme togglers in a row */
+    align-items: center; /* Center items vertically */
+    margin-left: 20px; /* Space between social links and theme togglers */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Change to column for mobile */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-items {
+        flex-direction: row; /* Keep nav items in a row */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        width: 100%; /* Full width */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+    }
+
+    .nav-item {
+        margin: 5px; /* Space between items */
+    }
+
+    #search-form {
+        margin-top: 10px; /* Add space above the search form */
+        width: 100%; /* Full width for search form */
+    }
+}
+
 
         .button-group {
             display: flex;
