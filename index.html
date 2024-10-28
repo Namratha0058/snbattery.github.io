@@ -15,6 +15,7 @@
 		   /* General styles for the navbar */
 /* General styles for the navbar */
 /* General styles for the navbar */
+/* General styles for the navbar */
 .navbar {
     display: flex;
     justify-content: flex-end; /* Aligns items to the right */
@@ -30,18 +31,23 @@
     display: flex; /* Displays items in a row */
     padding: 0; /* Removes padding */
     margin: 0; /* Removes margin */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    width: 100%; /* Full width */
 }
 
 .nav-item {
-    margin-left: 20px; /* Space between nav items */
+    flex: 1; /* Allow items to take equal width */
+    text-align: center; /* Center text within each item */
 }
 
 .nav-link {
     text-decoration: none; /* Removes underline from links */
     color: #333; /* Text color */
-    padding: 10px 15px; /* Add padding for clickable area */
+    padding: 10px 5px; /* Add padding for clickable area */
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+    display: block; /* Make links block elements */
 }
 
 /* Hover effect */
@@ -71,6 +77,51 @@
 
 #search-input:focus {
     border-color: #007bff; /* Change border color on focus */
+}
+
+/* Styles for button */
+button {
+    background-color: #007bff; /* Button background */
+    color: white; /* Button text color */
+    border: none; /* Removes border */
+    padding: 8px 12px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darken button on hover */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Keep items in a row */
+        justify-content: space-between; /* Space out items */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    .nav-items {
+        flex-direction: row; /* Keep nav items in a row */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        width: auto; /* Auto width for items */
+        justify-content: space-between; /* Space out items evenly */
+    }
+
+    .nav-item {
+        flex: 1; /* Allow items to take equal width */
+        margin: 0 5px; /* Space between items */
+    }
+
+    .nav-link {
+        padding: 10px; /* Adjust padding for better clickable area */
+    }
+
+    #search-form {
+        margin-left: 10px; /* Space between nav items and search form */
+        width: auto; /* Adjust search form width */
+    }
 }
 
 /* Styles for button */
