@@ -17,6 +17,7 @@
 /* General styles for the navbar */
 /* General styles for the navbar */
 /* General styles for the navbar */
+/* General styles for the navbar */
 .navbar {
     display: flex;
     justify-content: space-between; /* Space between items */
@@ -94,6 +95,25 @@ button:hover {
     background-color: #0056b3; /* Darken button on hover */
 }
 
+/* Styles for social links */
+.social-links {
+    display: flex; /* Displays social links in a row */
+    align-items: center; /* Center items vertically */
+    margin-left: 20px; /* Space between search and social links */
+}
+
+.social-links i {
+    font-size: 20px; /* Adjust size of icons */
+    color: #333; /* Default color for social icons */
+    margin-left: 10px; /* Space between icons */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Hover effect for social links */
+.social-links i:hover {
+    color: #007bff; /* Change color on hover */
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
     .navbar {
@@ -122,74 +142,6 @@ button:hover {
     #search-form {
         margin-left: 10px; /* Space between nav items and search form */
         width: auto; /* Adjust search form width */
-    }
-}
-
-/* Styles for button */
-button {
-    background-color: #007bff; /* Button background */
-    color: white; /* Button text color */
-    border: none; /* Removes border */
-    padding: 8px 12px; /* Padding for button */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-    transition: background-color 0.3s; /* Smooth transition */
-}
-
-button:hover {
-    background-color: #0056b3; /* Darken button on hover */
-}
-
-/* Styles for social links and theme togglers */
-.social-links {
-    display: flex; /* Displays social links in a row */
-    align-items: center; /* Center items vertically */
-    margin-left: 20px; /* Space between search and social links */
-}
-
-.line-divider {
-    height: 30px; /* Height of the line */
-    width: 1px; /* Width of the line */
-    background-color: #ccc; /* Color of the line */
-    margin: 0 10px; /* Spacing around the line */
-}
-
-.theme-togglers {
-    display: flex; /* Displays theme togglers in a row */
-    align-items: center; /* Center items vertically */
-    margin-left: 20px; /* Space between social links and theme togglers */
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Change to column for mobile */
-        align-items: flex-start; /* Align items to the start */
-        padding: 10px 0; /* Adjust padding for mobile */
-    }
-
-    .nav-items {
-        flex-direction: row; /* Keep nav items in a row */
-        flex-wrap: wrap; /* Allow wrapping if necessary */
-        width: 100%; /* Full width */
-        justify-content: space-between; /* Space out items */
-        padding: 0; /* Reset padding */
-    }
-
-    .nav-item {
-        flex: 1; /* Allow items to take equal width */
-        text-align: center; /* Center text within each item */
-        margin: 5px 0; /* Adjust margin for better spacing */
-    }
-
-    .nav-link {
-        display: block; /* Make links block elements */
-        width: 100%; /* Full width for each link */
-    }
-
-    #search-form {
-        margin-top: 10px; /* Add space above the search form */
-        width: 100%; /* Full width for search form */
     }
 }
 
