@@ -30,15 +30,15 @@
 
 /* Styles for nav items */
 /* General styles for the navbar */
+/* General styles for the navbar */
 .navbar {
     display: flex;
     flex-direction: row; /* Keep items in a row */
     justify-content: space-between; /* Space out items evenly */
     align-items: center; /* Centers items vertically */
-    padding: 10px; /* Add some padding */
+    padding: 5px; /* Reduced padding for mobile */
     background-color: #fff; /* Background color of navbar */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
 /* Styles for nav items */
@@ -48,6 +48,7 @@
     padding: 0; /* Removes padding */
     margin: 0; /* Removes margin */
     flex-wrap: nowrap; /* Prevent wrapping */
+    width: 100%; /* Full width */
 }
 
 .nav-item {
@@ -58,10 +59,11 @@
 .nav-link {
     text-decoration: none; /* Removes underline from links */
     color: #333; /* Text color */
-    padding: 10px; /* Add padding for clickable area */
+    padding: 8px; /* Reduced padding for clickable area */
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
     display: block; /* Make links block elements */
+    font-size: 14px; /* Reduced text size */
 }
 
 /* Hover effect */
@@ -74,13 +76,13 @@
 .social-links {
     display: flex; /* Displays social links in a row */
     align-items: center; /* Center items vertically */
-    margin-left: 20px; /* Space between social links and nav items */
+    margin-left: 10px; /* Space between social links and nav items */
 }
 
 .social-links i {
-    font-size: 20px; /* Adjust size of icons */
+    font-size: 18px; /* Adjust size of icons */
     color: #333; /* Default color for social icons */
-    margin-left: 10px; /* Space between icons */
+    margin-left: 8px; /* Space between icons */
     transition: color 0.3s; /* Smooth transition for color change */
 }
 
@@ -97,7 +99,7 @@
 
     .nav-items {
         width: 100%; /* Full width */
-        justify-content: space-between; /* Space out items evenly */
+        justify-content: space-around; /* Space out items evenly */
     }
 
     .nav-item {
@@ -106,16 +108,16 @@
     }
 
     .nav-link {
-        padding: 10px; /* Ensure enough padding for clickable area */
+        padding: 5px; /* Further reduced padding for better fit */
         white-space: nowrap; /* Prevent text wrapping */
         text-align: center; /* Center text in nav links */
+        font-size: 12px; /* Further reduced text size */
     }
 
     /* Ensure social links fit within the navbar */
     .social-links {
-        margin-left: 10px; /* Adjust space between nav items and social links */
+        margin-left: 5px; /* Adjust space between nav items and social links */
         flex-wrap: nowrap; /* Prevent wrapping of social icons */
-        margin-top: 5px; /* Space above social links */
     }
 
     /* Hide search form on mobile */
@@ -123,7 +125,6 @@
         display: none; /* Hide search form */
     }
 }
-
 
 
         .button-group {
