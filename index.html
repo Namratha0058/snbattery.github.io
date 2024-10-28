@@ -14,6 +14,7 @@
         }
 		   /* General styles for the navbar */
 /* General styles for the navbar */
+/* General styles for the navbar */
 .navbar {
     display: flex;
     justify-content: flex-end; /* Aligns items to the right */
@@ -112,17 +113,26 @@ button:hover {
     .navbar {
         flex-direction: column; /* Change to column for mobile */
         align-items: flex-start; /* Align items to the start */
+        padding: 10px 0; /* Adjust padding for mobile */
     }
 
     .nav-items {
         flex-direction: row; /* Keep nav items in a row */
-        flex-wrap: nowrap; /* Prevent wrapping */
+        flex-wrap: wrap; /* Allow wrapping if necessary */
         width: 100%; /* Full width */
-        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        justify-content: space-between; /* Space out items */
+        padding: 0; /* Reset padding */
     }
 
     .nav-item {
-        margin: 5px; /* Space between items */
+        flex: 1; /* Allow items to take equal width */
+        text-align: center; /* Center text within each item */
+        margin: 5px 0; /* Adjust margin for better spacing */
+    }
+
+    .nav-link {
+        display: block; /* Make links block elements */
+        width: 100%; /* Full width for each link */
     }
 
     #search-form {
@@ -130,6 +140,7 @@ button:hover {
         width: 100%; /* Full width for search form */
     }
 }
+
 
 
         .button-group {
