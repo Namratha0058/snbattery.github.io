@@ -27,6 +27,26 @@
     background-color: #fff; /* Background color of navbar */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 }
+/* Logo styles */
+.logo {
+    text-decoration: overline; /* Underline style */
+    color: blue; /* Text color */
+    font-size: 16px; /* Adjust font size for mobile */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow if needed */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    max-width: 100%; /* Ensure it fits within the screen width */
+    display: block; /* Display as block element */
+    padding: 10px; /* Add some padding */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 14px; /* Further reduce size for mobile */
+        padding: 5px; /* Adjust padding for mobile */
+    }
+}
 
 /* Styles for nav items */
 /* General styles for the navbar */
