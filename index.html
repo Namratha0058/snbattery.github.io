@@ -18,6 +18,7 @@
 /* General styles for the navbar */
 /* General styles for the navbar */
 /* General styles for the navbar */
+/* General styles for the navbar */
 .navbar {
     display: flex;
     justify-content: space-between; /* Space between items */
@@ -126,7 +127,7 @@ button:hover {
         flex-direction: row; /* Keep nav items in a row */
         flex-wrap: nowrap; /* Prevent wrapping */
         width: 100%; /* Full width */
-        justify-content: space-between; /* Space out items evenly */
+        justify-content: space-around; /* Space out items evenly */
     }
 
     .nav-item {
@@ -135,16 +136,16 @@ button:hover {
     }
 
     .nav-link {
-        padding: 10px 0; /* Adjust padding for better clickable area */
+        padding: 10px; /* Ensure enough padding for clickable area */
         white-space: nowrap; /* Prevent text wrapping */
+        text-align: center; /* Center text in nav links */
     }
 
+    /* Hide search form on mobile */
     #search-form {
-        margin-left: 10px; /* Space between nav items and search form */
-        width: auto; /* Adjust search form width */
+        display: none; /* Hide search form */
     }
 }
-
 
 
         .button-group {
