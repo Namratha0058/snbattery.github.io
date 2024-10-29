@@ -63,6 +63,25 @@
 .logo:hover {
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
+.phone-frame {
+    width: 300px; /* Width of the phone frame */
+    height: 600px; /* Height of the phone frame */
+    border: 16px solid #000; /* Thick black border to mimic phone edges */
+    border-radius: 30px; /* Rounded corners */
+    background-color: #fff; /* White background for the screen */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    margin: 20px auto; /* Center the frame */
+    position: relative; /* Positioning context for child elements */
+}
+
+.hero-lady-img {
+    width: 100%; /* Image takes the full width of the phone frame */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 30px; /* Rounded corners to match the frame */
+    position: absolute; /* Position it relative to the phone frame */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+}
 
 /* Mobile styles */
 @media (max-width: 768px) {
@@ -422,7 +441,7 @@
             </div>
           </div>
 
-          <img src="WhatsApp Image 2024-10-14 at 22.35.53_6078f6f0.jpg"" height="30" width="20" alt="woman licking ice cream and smiling" class="hero-lady-img" loading="lazy">
+          <img src="WhatsApp Image 2024-10-14 at 22.35.53_6078f6f0.jpg"height="30" width="20" alt="woman licking ice cream and smiling" class="hero-lady-img" loading="lazy">
         </section>
 
         <!-- --- section two --- -->
