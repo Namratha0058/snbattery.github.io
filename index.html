@@ -15,12 +15,9 @@
         }
 		   /* General styles for the navbar */
 /* General styles for the navbar */
-/* General styles for the navbar */
-/* General styles for the navbar */
-/* General styles for the navbar */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Space between items */
+    justify-content: flex-end; /* Aligns items to the right */
     align-items: center; /* Centers items vertically */
     padding: 10px; /* Add some padding */
     background-color: #fff; /* Background color of navbar */
@@ -33,22 +30,18 @@
     display: flex; /* Displays items in a row */
     padding: 0; /* Removes padding */
     margin: 0; /* Removes margin */
-    flex-wrap: nowrap; /* Prevent wrapping */
-    width: 100%; /* Full width */
 }
 
 .nav-item {
-    flex: 1; /* Allow items to take equal width */
-    text-align: center; /* Center text within each item */
+    margin-left: 20px; /* Space between nav items */
 }
 
 .nav-link {
     text-decoration: none; /* Removes underline from links */
     color: #333; /* Text color */
-    padding: 10px; /* Add padding for clickable area */
+    padding: 10px 15px; /* Add padding for clickable area */
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
-    display: block; /* Make links block elements */
 }
 
 /* Hover effect */
@@ -95,52 +88,6 @@ button:hover {
     background-color: #0056b3; /* Darken button on hover */
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: row; /* Keep items in a row */
-        justify-content: space-between; /* Space out items evenly */
-        padding: 10px; /* Adjust padding for mobile */
-    }
-
-    .nav-items {
-        flex-direction: row; /* Keep nav items in a row */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        width: 100%; /* Full width */
-        justify-content: space-between; /* Space out items evenly */
-    }
-
-    .nav-item {
-        flex: 1; /* Allow items to take equal width */
-        margin: 0; /* Remove margin */
-    }
-
-    .nav-link {
-        padding: 10px 0; /* Adjust padding for better clickable area */
-        white-space: nowrap; /* Prevent text wrapping */
-    }
-
-    #search-form {
-        margin-left: 10px; /* Space between nav items and search form */
-        width: auto; /* Adjust search form width */
-    }
-}
-
-/* Styles for button */
-button {
-    background-color: #007bff; /* Button background */
-    color: white; /* Button text color */
-    border: none; /* Removes border */
-    padding: 8px 12px; /* Padding for button */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-    transition: background-color 0.3s; /* Smooth transition */
-}
-
-button:hover {
-    background-color: #0056b3; /* Darken button on hover */
-}
-
 /* Styles for social links and theme togglers */
 .social-links {
     display: flex; /* Displays social links in a row */
@@ -166,26 +113,17 @@ button:hover {
     .navbar {
         flex-direction: column; /* Change to column for mobile */
         align-items: flex-start; /* Align items to the start */
-        padding: 10px 0; /* Adjust padding for mobile */
     }
 
     .nav-items {
         flex-direction: row; /* Keep nav items in a row */
-        flex-wrap: wrap; /* Allow wrapping if necessary */
+        flex-wrap: nowrap; /* Prevent wrapping */
         width: 100%; /* Full width */
-        justify-content: space-between; /* Space out items */
-        padding: 0; /* Reset padding */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
     }
 
     .nav-item {
-        flex: 1; /* Allow items to take equal width */
-        text-align: center; /* Center text within each item */
-        margin: 5px 0; /* Adjust margin for better spacing */
-    }
-
-    .nav-link {
-        display: block; /* Make links block elements */
-        width: 100%; /* Full width for each link */
+        margin: 5px; /* Space between items */
     }
 
     #search-form {
@@ -193,7 +131,6 @@ button:hover {
         width: 100%; /* Full width for search form */
     }
 }
-
 
 
         .button-group {
@@ -390,11 +327,18 @@ button:hover {
           <li class="nav-item"><a href="#FAQ's" class="nav-link clr-transition"style="text-decoration:overline;">FAQ's</a></li>
 		 
 		  <li class="nav-item"><a href="#contact" class="nav-link clr-transition"style="text-decoration:overline;">Contact</a></li>
-		 
+		    <form id="search-form" onsubmit="return searchFunction(event);">
+            <input type="text" id="search-input" placeholder="Search..." required>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
           </ul>
 		  
           <div class="social-links">
-        
+            <ul>
+              <li><i class='bx bxl-instagram nav-icon clr-transition'></i></li>
+              <li><i class='bx bxl-twitter nav-icon clr-transition'></i></li>
+              <li><i class='bx bxl-facebook nav-icon clr-transition'></i></li>
+            </ul>
             <span class="line-divider clr-transition"></span>
             <div class="theme-togglers">
               <i class='bx bxs-sun theme-toggler clr-transition'></i>
@@ -403,7 +347,9 @@ button:hover {
           </div>
         </nav>
 
-      
+        <div class="menu-togglers">
+          <i class="bx bx-menu menu-toggle clr-transition"></i>
+        </div>
       </header>
 	   <div class="quote-slideshow">
             <div class="quote-slide fade">"A battery is the heart of your car. Keep it healthy!"</div>
