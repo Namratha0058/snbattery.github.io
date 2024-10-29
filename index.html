@@ -17,67 +17,11 @@
 /* General styles for the navbar */
 /* General styles for the navbar */
 /* General styles for the navbar */
-/* General styles for the navbar */
-/* General styles for the navbar */
-/* General styles for the navbar */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Space between items */
+    justify-content: flex-end; /* Aligns items to the right */
     align-items: center; /* Centers items vertically */
     padding: 10px; /* Add some padding */
-    background-color: #fff; /* Background color of navbar */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-}
-/* Logo styles */
-/* General logo styles */
-.logo {
-    display: flex; /* Flex layout to align image and text */
-    align-items: center; /* Center vertically */
-    text-decoration: none; /* Remove underline */
-    color: #007bff; /* Text color */
-    font-size: 28px; /* Large font size */
-    font-weight: bold; /* Bold font */
-    letter-spacing: 1px; /* Increase letter spacing */
-    padding: 10px; /* Add some padding */
-    background-color: rgba(0, 123, 255, 0.1); /* Light background for contrast */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s; /* Smooth transition for hover effect */
-}
-
-/* Logo image styles */
-.logo-image {
-    width: 40px; /* Adjust size of the logo image */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Space between image and text */
-}
-
-/* Hover effect */
-.logo:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .logo {
-        font-size: 24px; /* Adjust size for mobile */
-        padding: 5px; /* Adjust padding for mobile */
-    }
-
-    .logo-image {
-        width: 30px; /* Smaller logo image for mobile */
-    }
-}
-
-/* Styles for nav items */
-/* General styles for the navbar */
-/* General styles for the navbar */
-.navbar {
-    display: flex;
-    flex-direction: row; /* Keep items in a row */
-    justify-content: space-between; /* Space out items evenly */
-    align-items: center; /* Centers items vertically */
-    padding: 5px; /* Reduced padding for mobile */
     background-color: #fff; /* Background color of navbar */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 }
@@ -89,6 +33,7 @@
     padding: 0; /* Removes padding */
     margin: 0; /* Removes margin */
     flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
     width: 100%; /* Full width */
 }
 
@@ -100,11 +45,10 @@
 .nav-link {
     text-decoration: none; /* Removes underline from links */
     color: #333; /* Text color */
-    padding: 8px; /* Reduced padding for clickable area */
+    padding: 10px 5px; /* Add padding for clickable area */
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
     display: block; /* Make links block elements */
-    font-size: 14px; /* Reduced text size */
 }
 
 /* Hover effect */
@@ -113,59 +57,142 @@
     color: #fff; /* Change text color on hover */
 }
 
-/* Styles for social links */
-.social-links {
-    display: flex; /* Displays social links in a row */
-    align-items: center; /* Center items vertically */
-    margin-left: 10px; /* Space between social links and nav items */
+/* Active link styling */
+.nav-link.active {
+    background-color: #0056b3; /* Different background for active link */
+    color: #fff; /* Text color for active link */
 }
 
-.social-links i {
-    font-size: 18px; /* Adjust size of icons */
-    color: #333; /* Default color for social icons */
-    margin-left: 8px; /* Space between icons */
-    transition: color 0.3s; /* Smooth transition for color change */
+/* Styles for search form */
+#search-form {
+    display: flex; /* Displays input and button in a row */
+    margin-left: 20px; /* Space between nav items and search form */
 }
 
-/* Hover effect for social links */
-.social-links i:hover {
-    color: #007bff; /* Change color on hover */
+#search-input {
+    padding: 5px; /* Padding inside the search input */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+    transition: border-color 0.3s; /* Smooth transition */
+}
+
+#search-input:focus {
+    border-color: #007bff; /* Change border color on focus */
+}
+
+/* Styles for button */
+button {
+    background-color: #007bff; /* Button background */
+    color: white; /* Button text color */
+    border: none; /* Removes border */
+    padding: 8px 12px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darken button on hover */
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
     .navbar {
-        padding: 5px; /* Adjust padding for mobile */
+        flex-direction: row; /* Keep items in a row */
+        justify-content: space-between; /* Space out items */
+        padding: 10px; /* Adjust padding for mobile */
     }
 
     .nav-items {
-        width: 100%; /* Full width */
-        justify-content: space-around; /* Space out items evenly */
+        flex-direction: row; /* Keep nav items in a row */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        width: auto; /* Auto width for items */
+        justify-content: space-between; /* Space out items evenly */
     }
 
     .nav-item {
         flex: 1; /* Allow items to take equal width */
-        margin: 0; /* Remove margin */
+        margin: 0 5px; /* Space between items */
     }
 
     .nav-link {
-        padding: 5px; /* Further reduced padding for better fit */
-        white-space: nowrap; /* Prevent text wrapping */
-        text-align: center; /* Center text in nav links */
-        font-size: 12px; /* Further reduced text size */
+        padding: 10px; /* Adjust padding for better clickable area */
     }
 
-    /* Ensure social links fit within the navbar */
-    .social-links {
-        margin-left: 5px; /* Adjust space between nav items and social links */
-        flex-wrap: nowrap; /* Prevent wrapping of social icons */
-    }
-
-    /* Hide search form on mobile */
     #search-form {
-        display: none; /* Hide search form */
+        margin-left: 10px; /* Space between nav items and search form */
+        width: auto; /* Adjust search form width */
     }
 }
+
+/* Styles for button */
+button {
+    background-color: #007bff; /* Button background */
+    color: white; /* Button text color */
+    border: none; /* Removes border */
+    padding: 8px 12px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darken button on hover */
+}
+
+/* Styles for social links and theme togglers */
+.social-links {
+    display: flex; /* Displays social links in a row */
+    align-items: center; /* Center items vertically */
+    margin-left: 20px; /* Space between search and social links */
+}
+
+.line-divider {
+    height: 30px; /* Height of the line */
+    width: 1px; /* Width of the line */
+    background-color: #ccc; /* Color of the line */
+    margin: 0 10px; /* Spacing around the line */
+}
+
+.theme-togglers {
+    display: flex; /* Displays theme togglers in a row */
+    align-items: center; /* Center items vertically */
+    margin-left: 20px; /* Space between social links and theme togglers */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Change to column for mobile */
+        align-items: flex-start; /* Align items to the start */
+        padding: 10px 0; /* Adjust padding for mobile */
+    }
+
+    .nav-items {
+        flex-direction: row; /* Keep nav items in a row */
+        flex-wrap: wrap; /* Allow wrapping if necessary */
+        width: 100%; /* Full width */
+        justify-content: space-between; /* Space out items */
+        padding: 0; /* Reset padding */
+    }
+
+    .nav-item {
+        flex: 1; /* Allow items to take equal width */
+        text-align: center; /* Center text within each item */
+        margin: 5px 0; /* Adjust margin for better spacing */
+    }
+
+    .nav-link {
+        display: block; /* Make links block elements */
+        width: 100%; /* Full width for each link */
+    }
+
+    #search-form {
+        margin-top: 10px; /* Add space above the search form */
+        width: 100%; /* Full width for search form */
+    }
+}
+
 
 
         .button-group {
@@ -353,11 +380,7 @@
     </a>
 </div>
       <header class="container">
-     <a href="#hero" class="logo clr-transition">
-    <img src="NAM.jpg" alt="Logo" class="logo-image"> 
-    S N BATTERY SALES AND SERVICES
-</a>
-
+        <a href="#hero" class="logo clr-transition" style="text-color:blue;text-size:100PX;text-decoration:overline;"> S N BATTERY SALES AND SERVICES</a><br>
         <nav class="navbar">
           <ul class="nav-items">
             <li class="nav-item"><a href="#hero" class="nav-link clr-transition"style="text-decoration:overline;">Home</a></li>
@@ -367,13 +390,16 @@
 		 
 		  <li class="nav-item"><a href="#contact" class="nav-link clr-transition"style="text-decoration:overline;">Contact</a></li>
 		    <form id="search-form" onsubmit="return searchFunction(event);">
-            
+            <input type="text" id="search-input" placeholder="Search..." required>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
           </ul>
 		  
           <div class="social-links">
             <ul>
-              
-     
+              <li><i class='bx bxl-instagram nav-icon clr-transition'></i></li>
+              <li><i class='bx bxl-twitter nav-icon clr-transition'></i></li>
+              <li><i class='bx bxl-facebook nav-icon clr-transition'></i></li>
             </ul>
             <span class="line-divider clr-transition"></span>
             <div class="theme-togglers">
@@ -384,7 +410,7 @@
         </nav>
 
         <div class="menu-togglers">
-      
+          <i class="bx bx-menu menu-toggle clr-transition"></i>
         </div>
       </header>
 	   <div class="quote-slideshow">
