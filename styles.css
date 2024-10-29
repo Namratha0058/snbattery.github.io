@@ -259,7 +259,7 @@ body {
 }
 
 .hook-title {
-  font-size: 7rem; /* Hero title size */
+  font-size: 4rem; /* Hero title size */
 }
 
 .hero-btns-container {
@@ -321,7 +321,7 @@ body {
  
 
   .hook-title {
-    font-size: 5rem; /* Adjust hero title size */
+    font-size: 3rem; /* Adjust hero title size */
   }
 
   .hero-btns-container {
@@ -651,7 +651,7 @@ header {
 }
 
 .hook-title {
-  font-size: 7rem;
+  font-size: 5rem;
   line-height: 117%;
   max-width: 50rem;
   color: var(--text-clr);
@@ -664,7 +664,7 @@ header {
 }
 @media screen and (min-width: 414px) {
   .hook-title {
-    font-size: 75px;
+    font-size: 92px;
   }
 }
 .hero-btns-container {
